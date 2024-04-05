@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://do7txapympmyl"
+path="res://.godot/imported/SwordBoardCharacter-Sheet.aseprite-02a841be427b8efc1069d16c982c229c.res"
+
+[deps]
+
+source_file="res://Sprites/SwordBoard/SwordBoardCharacter-Sheet.aseprite"
+dest_files=["res://.godot/imported/SwordBoardCharacter-Sheet.aseprite-02a841be427b8efc1069d16c982c229c.res"]
+
+[params]
+

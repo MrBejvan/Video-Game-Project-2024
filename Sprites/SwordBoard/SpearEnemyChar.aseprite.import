@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dvxhscsrpxjox"
+path="res://.godot/imported/SpearEnemyChar.aseprite-c53d0744a531d382b0ffee1d15947915.res"
+
+[deps]
+
+source_file="res://Sprites/SwordBoard/SpearEnemyChar.aseprite"
+dest_files=["res://.godot/imported/SpearEnemyChar.aseprite-c53d0744a531d382b0ffee1d15947915.res"]
+
+[params]
+

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1o7xuhv6q028"
-path="res://.godot/imported/SwordBoardCharacter.png-cd228ddb28bc4d624146f6b829686f8c.ctex"
+path="res://.godot/imported/SwordBoardCharacter.png-cec330e2f4faf425bb9890e2919d64ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SwordBoardCharacter.png"
-dest_files=["res://.godot/imported/SwordBoardCharacter.png-cd228ddb28bc4d624146f6b829686f8c.ctex"]
+source_file="res://Sprites/SwordBoard/SwordBoardCharacter.png"
+dest_files=["res://.godot/imported/SwordBoardCharacter.png-cec330e2f4faf425bb9890e2919d64ca.ctex"]
 
 [params]
 
