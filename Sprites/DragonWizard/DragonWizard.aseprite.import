@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://chdqjxowhj45w"
+path="res://.godot/imported/DragonWizard.aseprite-e11753ccbfea2e18e55579947edddde8.res"
+
+[deps]
+
+source_file="res://Sprites/DragonWizard/DragonWizard.aseprite"
+dest_files=["res://.godot/imported/DragonWizard.aseprite-e11753ccbfea2e18e55579947edddde8.res"]
+
+[params]
+

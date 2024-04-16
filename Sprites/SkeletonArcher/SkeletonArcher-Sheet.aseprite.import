@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://brm8rvyjel6x"
+path="res://.godot/imported/SkeletonArcher-Sheet.aseprite-b7b3422cde3fa17d2576d6dbc33608dc.res"
+
+[deps]
+
+source_file="res://Sprites/SkeletonArcher/SkeletonArcher-Sheet.aseprite"
+dest_files=["res://.godot/imported/SkeletonArcher-Sheet.aseprite-b7b3422cde3fa17d2576d6dbc33608dc.res"]
+
+[params]
+
