@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+#const characterName := "Sword & Board"
+
+#const STARTING_STATS = "res://mechs/Character/starting_stats.gd"
+
 const XP_DATABASE = "res://mechs/TestDatabase.json"
 const MAX_LEVEL = 5
 
