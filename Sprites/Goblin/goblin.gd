@@ -19,8 +19,6 @@ var swift := 3
 var defense := 1
 
 
-
-
 #attacks -> where does the "math" happen?
 
 func goblinAttackValue():
