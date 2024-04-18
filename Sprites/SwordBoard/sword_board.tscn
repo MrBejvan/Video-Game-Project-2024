@@ -159,11 +159,12 @@ _data = {
 script = ExtResource("1_qccm2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0.5)
+position = Vector2(190, 100)
 shape = SubResource("RectangleShape2D_rx5am")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(189, 100)
 texture = ExtResource("1_bpmg1")
 hframes = 12
 frame = 1
@@ -194,9 +195,10 @@ libraries = {
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Level" type="HBoxContainer" parent="UI"]
-offset_left = -114.0
-offset_top = 29.0
-offset_bottom = 56.0
+offset_left = 78.0
+offset_top = 118.0
+offset_right = 192.0
+offset_bottom = 145.0
 
 [node name="Label" type="Label" parent="UI/Level"]
 unique_name_in_owner = true
@@ -210,11 +212,70 @@ custom_minimum_size = Vector2(100, 1)
 layout_mode = 2
 max_value = 200.0
 
+[node name="Stats" type="HBoxContainer" parent="UI/Level"]
+layout_mode = 2
+
+[node name="Attribute" type="VBoxContainer" parent="UI/Level/Stats"]
+layout_mode = 2
+
+[node name="Total XP" type="Label" parent="UI/Level/Stats/Attribute"]
+layout_mode = 2
+text = "Total XP"
+
+[node name="Health" type="Label" parent="UI/Level/Stats/Attribute"]
+layout_mode = 2
+text = "Health"
+
+[node name="Strength" type="Label" parent="UI/Level/Stats/Attribute"]
+layout_mode = 2
+text = "Strength"
+
+[node name="Swift" type="Label" parent="UI/Level/Stats/Attribute"]
+layout_mode = 2
+text = "Swift"
+
+[node name="Defense" type="Label" parent="UI/Level/Stats/Attribute"]
+layout_mode = 2
+text = "Defense"
+
+[node name="Value" type="VBoxContainer" parent="UI/Level/Stats"]
+layout_mode = 2
+
+[node name="Total XP" type="Label" parent="UI/Level/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="Health" type="Label" parent="UI/Level/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="Strength" type="Label" parent="UI/Level/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="Swift" type="Label" parent="UI/Level/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="Defense" type="Label" parent="UI/Level/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+horizontal_alignment = 2
+
 [node name="Button" type="Button" parent="UI"]
-offset_left = 40.0
-offset_top = 25.0
-offset_right = 82.0
-offset_bottom = 56.0
+offset_left = 272.0
+offset_top = 62.0
+offset_right = 314.0
+offset_bottom = 93.0
 text = "+ XP
 "
 
