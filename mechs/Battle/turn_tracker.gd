@@ -16,8 +16,8 @@ class TurnTracker:
     func _init():
         head = null
     
-    func insert(character, speed):
-        var newTurnNode = CharacterNode(character, speed)
+    func insert(character, speed):                  #correct; insert based on character keyword map
+        var newTurnNode = CharacterNode.new()
 
         if head == null:
             newTurnNode.next = newTurnNode
