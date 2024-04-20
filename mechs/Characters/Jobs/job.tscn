@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dql23o063i6vn"]
+
+[ext_resource type="Script" path="res://mechs/Characters/Jobs/Job.gd" id="1_tfaxa"]
+[ext_resource type="Resource" uid="uid://x7eos45usuo1" path="res://mechs/Characters/Jobs/KnightStats.tres" id="2_6irtv"]
+
+[node name="Job" type="Node"]
+script = ExtResource("1_tfaxa")
+starting_stats = ExtResource("2_6irtv")
+
+[node name="stats" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="skills" type="Node" parent="."]
+unique_name_in_owner = true
