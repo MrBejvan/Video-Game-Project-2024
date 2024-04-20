@@ -10,6 +10,7 @@ var max_health : int
 var strength : int
 var swift : int
 var defense : int
+var num_skills_available : int
 
 func initialize(stats : StartingStats):
 	max_health = stats.max_health
@@ -20,15 +21,4 @@ func initialize(stats : StartingStats):
 	
 func set_max_health(value):
 	max_health = max(0, value)
-	
-func take_damage(hit):
-	health -= hit.damage
-	health = max(0, health)
-	emit_signal("health_changed", health)
-	if (health == 0):
-		emit_signal("health_depleted")
-		
-		
-#can add modifier funcs here
-		
 
