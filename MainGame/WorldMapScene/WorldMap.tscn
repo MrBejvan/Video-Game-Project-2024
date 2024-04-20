@@ -1,3 +1,84 @@
-[gd_scene format=3 uid="uid://lt7bsb6f041o"]
+[gd_scene load_steps=2 format=3 uid="uid://lt7bsb6f041o"]
+
+[ext_resource type="Texture2D" uid="uid://cuono0yxdxku0" path="res://Sprites/WorldMap/Level 1/mergedown_level001.png" id="1_51me1"]
 
 [node name="WorldMap" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 987.0
+offset_bottom = 552.0
+texture = ExtResource("1_51me1")
+
+[node name="Battle001" type="Node2D" parent="TextureRect"]
+
+[node name="Area2D" type="Area2D" parent="TextureRect/Battle001"]
+
+[node name="Battle002" type="Node2D" parent="TextureRect"]
+
+[node name="Battle003" type="Node2D" parent="TextureRect"]
+
+[node name="Shop001" type="Node2D" parent="TextureRect"]
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+
+[node name="EXP" type="ProgressBar" parent="Player"]
+custom_minimum_size = Vector2(250, 0)
+offset_left = 632.0
+offset_top = 34.0
+offset_right = 895.0
+offset_bottom = 61.0
+
+[node name="Health" type="ProgressBar" parent="Player"]
+custom_minimum_size = Vector2(250, 0)
+offset_left = 92.0
+offset_top = 32.0
+offset_right = 355.0
+offset_bottom = 59.0
+
+[node name="Settings" type="Button" parent="."]
+custom_minimum_size = Vector2(170, 45)
+offset_left = 523.0
+offset_top = 483.0
+offset_right = 695.0
+offset_bottom = 529.0
+text = "SETTINGS"
+
+[node name="LOAD" type="Button" parent="."]
+custom_minimum_size = Vector2(170, 45)
+offset_left = 308.0
+offset_top = 483.0
+offset_right = 480.0
+offset_bottom = 529.0
+text = "LOAD"
+
+[node name="SAVE" type="Button" parent="."]
+custom_minimum_size = Vector2(170, 45)
+offset_left = 76.0
+offset_top = 482.0
+offset_right = 248.0
+offset_bottom = 530.0
+text = "SAVE"
+
+[node name="MenuButton" type="MenuButton" parent="."]
+custom_minimum_size = Vector2(170, 45)
+offset_left = 739.0
+offset_top = 483.0
+offset_right = 909.0
+offset_bottom = 528.0
+text = "MENU"
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(170, 45)
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 412.0
+offset_top = 15.0
+offset_right = 582.0
+offset_bottom = 60.0
+grow_horizontal = 2
+text = "FIGHT!"
