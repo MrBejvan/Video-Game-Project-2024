@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://61ce6e6o44te"]
+[gd_scene load_steps=2 format=3 uid="uid://61ce6e6o44te"]
+
+[ext_resource type="Texture2D" uid="uid://cdb5q5y62gkkq" path="res://Sprites/WorldMap/Level 1/Battle001/MergeDownBattle001Field.png" id="1_v400y"]
 
 [node name="BattleScene001" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_v400y")

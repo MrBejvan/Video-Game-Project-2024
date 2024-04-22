@@ -1,0 +1,6 @@
+{
+	"battle001": "res://MainGame/BattleScene/BattleScene001.tscn",
+	"battle002": "res://MainGame/BattleScene/BattleScene002.tscn",
+	"battle003": "res://MainGame/BattleScene/BattleScene003.tscn",
+	"shop001": "res://MainGame/ShopScene/ShopScene001.tscn"
+}
