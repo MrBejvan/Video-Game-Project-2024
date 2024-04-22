@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://lt7bsb6f041o"]
+[gd_scene load_steps=7 format=3 uid="uid://lt7bsb6f041o"]
 
 [ext_resource type="Texture2D" uid="uid://cuono0yxdxku0" path="res://Sprites/WorldMap/Level 1/mergedown_level001.png" id="1_51me1"]
+[ext_resource type="Script" path="res://MainGame/WorldMapScene/WorldMap.gd" id="1_vmq77"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/WorldScenePlayer.gd" id="2_2cga4"]
 [ext_resource type="Texture2D" uid="uid://c81sybvv6ri5" path="res://icon.svg" id="2_n8qjq"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/FIGHT.gd" id="4_v00y1"]
@@ -10,6 +11,7 @@ radius = 30.4631
 
 [node name="WorldMap" type="Node2D"]
 position = Vector2(75, 45)
+script = ExtResource("1_vmq77")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 987.0
