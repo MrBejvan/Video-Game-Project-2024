@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://lt7bsb6f041o"]
+[gd_scene load_steps=5 format=3 uid="uid://lt7bsb6f041o"]
 
 [ext_resource type="Texture2D" uid="uid://cuono0yxdxku0" path="res://Sprites/WorldMap/Level 1/mergedown_level001.png" id="1_51me1"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/WorldScenePlayer.gd" id="2_2cga4"]
 [ext_resource type="Texture2D" uid="uid://c81sybvv6ri5" path="res://icon.svg" id="2_n8qjq"]
-[ext_resource type="Script" path="res://MainGame/WorldMapScene/FIGHT.gd" id="4_v00y1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e8dy0"]
 radius = 30.4631
@@ -25,7 +24,6 @@ position = Vector2(116, 117)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Battle001" type="Node2D" parent="TextureRect"]
-unique_name_in_owner = true
 
 [node name="Area2D" type="Area2D" parent="TextureRect/Battle001"]
 
@@ -98,7 +96,6 @@ position = Vector2(865, 358)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-unique_name_in_owner = true
 position = Vector2(112, 64)
 script = ExtResource("2_2cga4")
 
@@ -169,10 +166,3 @@ offset_right = 582.0
 offset_bottom = 60.0
 grow_horizontal = 2
 text = "FIGHT!"
-script = ExtResource("4_v00y1")
-
-[connection signal="area_entered" from="TextureRect/Battle001/Area2D" to="FIGHT" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="TextureRect/Battle001/Area2D" to="FIGHT" method="_on_area_2d_area_exited"]
-[connection signal="body_entered" from="TextureRect/Battle001/Area2D" to="FIGHT" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="TextureRect/Battle001/Area2D" to="FIGHT" method="_on_area_2d_body_exited"]
-[connection signal="pressed" from="FIGHT" to="FIGHT" method="_on_fight_pressed"]
