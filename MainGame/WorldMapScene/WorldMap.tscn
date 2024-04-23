@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c81sybvv6ri5" path="res://icon.svg" id="2_n8qjq"]
 [ext_resource type="Texture2D" uid="uid://djhfsrsft5awd" path="res://Sprites/WorldMap/Level 1/mergedown_level001_white button spaces.png" id="2_w7hvh"]
 [ext_resource type="Texture2D" uid="uid://cwtv6gi3b56ox" path="res://Sprites/Buttons/WorldSceneButtons/FIght Button!.png" id="4_jrhau"]
-[ext_resource type="Script" path="res://MainGame/WorldMapScene/FIGHT.gd" id="4_v00y1"]
+[ext_resource type="Script" path="res://MainGame/WorldMapScene/Fight.gd" id="4_ltepx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e8dy0"]
 radius = 7.0
@@ -101,27 +101,13 @@ shape = SubResource("CircleShape2D_e8dy0")
 position = Vector2(223, 134)
 shape = SubResource("CircleShape2D_e8dy0")
 
-[node name="FIGHT" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 193.0
-offset_top = -26.0
-offset_right = 252.0
-offset_bottom = 5.0
-grow_horizontal = 2
-text = "FIGHT!"
-script = ExtResource("4_v00y1")
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="."]
+[node name="Fight!Button" type="Button" parent="."]
 offset_left = 99.0
 offset_top = 3.0
 offset_right = 157.0
 offset_bottom = 31.0
 icon = ExtResource("4_jrhau")
-
-[node name="Sprite2D" type="Sprite2D" parent="Button"]
+script = ExtResource("4_ltepx")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
@@ -138,8 +124,4 @@ position = Vector2(14, 43.5)
 scale = Vector2(0.126953, 0.12207)
 polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
 
-[connection signal="area_entered" from="TextureRect/Battle001/Area2D" to="FIGHT" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="TextureRect/Battle001/Area2D" to="FIGHT" method="_on_area_2d_area_exited"]
-[connection signal="body_entered" from="TextureRect/Battle001/Area2D" to="FIGHT" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="TextureRect/Battle001/Area2D" to="FIGHT" method="_on_area_2d_body_exited"]
-[connection signal="pressed" from="FIGHT" to="FIGHT" method="_on_fight_pressed"]
+[connection signal="pressed" from="Fight!Button" to="Fight!Button" method="_on_pressed"]

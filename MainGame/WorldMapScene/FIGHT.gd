@@ -34,3 +34,7 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body):
 	playerInArea = false
 """
+
+
+func _on_pressed():
+	pass # Replace with function body.
