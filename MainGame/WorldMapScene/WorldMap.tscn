@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://lt7bsb6f041o"]
+[gd_scene load_steps=8 format=3 uid="uid://lt7bsb6f041o"]
 
-[ext_resource type="Texture2D" uid="uid://cuono0yxdxku0" path="res://Sprites/WorldMap/Level 1/mergedown_level001.png" id="1_51me1"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/WorldMap.gd" id="1_vmq77"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/WorldScenePlayer.gd" id="2_2cga4"]
 [ext_resource type="Texture2D" uid="uid://c81sybvv6ri5" path="res://icon.svg" id="2_n8qjq"]
+[ext_resource type="Texture2D" uid="uid://djhfsrsft5awd" path="res://Sprites/WorldMap/Level 1/mergedown_level001_white button spaces.png" id="2_w7hvh"]
+[ext_resource type="Texture2D" uid="uid://cwtv6gi3b56ox" path="res://Sprites/Buttons/WorldSceneButtons/FIght Button!.png" id="4_jrhau"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/FIGHT.gd" id="4_v00y1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e8dy0"]
-radius = 8.24621
+radius = 7.0
 
 [node name="WorldMap" type="Node2D"]
 script = ExtResource("1_vmq77")
@@ -16,7 +17,7 @@ script = ExtResource("1_vmq77")
 custom_minimum_size = Vector2(256, 192)
 offset_right = 256.0
 offset_bottom = 192.0
-texture = ExtResource("1_51me1")
+texture = ExtResource("2_w7hvh")
 metadata/_edit_use_anchors_ = true
 
 [node name="StartingLocation" type="Node2D" parent="TextureRect"]
@@ -24,7 +25,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="TextureRect/StartingLocation"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/StartingLocation/Area2D"]
-position = Vector2(27, 43)
+position = Vector2(27, 50)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Battle001" type="Node2D" parent="TextureRect"]
@@ -33,7 +34,7 @@ unique_name_in_owner = true
 [node name="Area2D" type="Area2D" parent="TextureRect/Battle001"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle001/Area2D"]
-position = Vector2(142, 42)
+position = Vector2(143, 51)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Battle002" type="Node2D" parent="TextureRect"]
@@ -41,7 +42,7 @@ shape = SubResource("CircleShape2D_e8dy0")
 [node name="Area2D" type="Area2D" parent="TextureRect/Battle002"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle002/Area2D"]
-position = Vector2(226, 43)
+position = Vector2(226, 51)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Battle003" type="Node2D" parent="TextureRect"]
@@ -49,7 +50,7 @@ shape = SubResource("CircleShape2D_e8dy0")
 [node name="Area2D" type="Area2D" parent="TextureRect/Battle003"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle003/Area2D"]
-position = Vector2(225, 79)
+position = Vector2(227, 87)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Shop001" type="Node2D" parent="TextureRect"]
@@ -57,7 +58,7 @@ shape = SubResource("CircleShape2D_e8dy0")
 [node name="Area2D" type="Area2D" parent="TextureRect/Shop001"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Shop001/Area2D"]
-position = Vector2(128, 78)
+position = Vector2(128, 87)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Battle004a" type="Node2D" parent="TextureRect"]
@@ -65,7 +66,7 @@ shape = SubResource("CircleShape2D_e8dy0")
 [node name="Area2D" type="Area2D" parent="TextureRect/Battle004a"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle004a/Area2D"]
-position = Vector2(58, 62)
+position = Vector2(57, 71)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Battle004b" type="Node2D" parent="TextureRect"]
@@ -73,7 +74,7 @@ shape = SubResource("CircleShape2D_e8dy0")
 [node name="Area2D" type="Area2D" parent="TextureRect/Battle004b"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle004b/Area2D"]
-position = Vector2(58, 98)
+position = Vector2(58, 107)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Battle005" type="Node2D" parent="TextureRect"]
@@ -81,7 +82,7 @@ shape = SubResource("CircleShape2D_e8dy0")
 [node name="Area2D" type="Area2D" parent="TextureRect/Battle005"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle005/Area2D"]
-position = Vector2(30, 117)
+position = Vector2(30, 127)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Battle006" type="Node2D" parent="TextureRect"]
@@ -89,7 +90,7 @@ shape = SubResource("CircleShape2D_e8dy0")
 [node name="Area2D" type="Area2D" parent="TextureRect/Battle006"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle006/Area2D"]
-position = Vector2(169, 127)
+position = Vector2(169, 135)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="BOSS" type="Node2D" parent="TextureRect"]
@@ -97,12 +98,34 @@ shape = SubResource("CircleShape2D_e8dy0")
 [node name="Area2D" type="Area2D" parent="TextureRect/BOSS"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/BOSS/Area2D"]
-position = Vector2(224, 124)
+position = Vector2(223, 134)
 shape = SubResource("CircleShape2D_e8dy0")
+
+[node name="FIGHT" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 193.0
+offset_top = -26.0
+offset_right = 252.0
+offset_bottom = 5.0
+grow_horizontal = 2
+text = "FIGHT!"
+script = ExtResource("4_v00y1")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 99.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 31.0
+icon = ExtResource("4_jrhau")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(14, -1)
+position = Vector2(13, 7)
 script = ExtResource("2_2cga4")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player"]
@@ -114,20 +137,6 @@ texture = ExtResource("2_n8qjq")
 position = Vector2(14, 43.5)
 scale = Vector2(0.126953, 0.12207)
 polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
-
-[node name="FIGHT" type="Button" parent="."]
-custom_minimum_size = Vector2(170, 45)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 70.0
-offset_top = -135.0
-offset_right = 240.0
-offset_bottom = -90.0
-grow_horizontal = 2
-text = "FIGHT!"
-script = ExtResource("4_v00y1")
-metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="TextureRect/Battle001/Area2D" to="FIGHT" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="TextureRect/Battle001/Area2D" to="FIGHT" method="_on_area_2d_area_exited"]
