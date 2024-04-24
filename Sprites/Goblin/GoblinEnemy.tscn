@@ -18,3 +18,7 @@ starting_stats = ExtResource("4_06mga")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("5_ecbbm")
 hframes = 15
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0

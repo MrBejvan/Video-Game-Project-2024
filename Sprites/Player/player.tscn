@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjew5s47tqpad"]
+[gd_scene load_steps=5 format=3 uid="uid://cjew5s47tqpad"]
 
+[ext_resource type="Script" path="res://mechs/Characters/Battler/Battler.gd" id="1_1hfjx"]
 [ext_resource type="PackedScene" uid="uid://d3f5eqw6nmo0e" path="res://mechs/Characters/Jobs/job.tscn" id="1_t1bb4"]
 [ext_resource type="Texture2D" uid="uid://bbxiegypthj5u" path="res://Sprites/Player/SwordBoardCharacter-Sheet.png" id="1_uvhyv"]
 [ext_resource type="Resource" uid="uid://bgvakpdckr3nu" path="res://mechs/Characters/Jobs/Player.tres" id="2_7fhij"]
 
 [node name="Player" type="Node2D"]
+
+[node name="Battler" type="Node" parent="."]
+script = ExtResource("1_1hfjx")
 
 [node name="Job" parent="." instance=ExtResource("1_t1bb4")]
 starting_stats = ExtResource("2_7fhij")
@@ -12,3 +16,9 @@ starting_stats = ExtResource("2_7fhij")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_uvhyv")
 hframes = 12
+
+[node name="HealthBar" type="ProgressBar" parent="Sprite2D"]
+offset_left = -31.0
+offset_top = -41.0
+offset_right = 31.0
+offset_bottom = -14.0
