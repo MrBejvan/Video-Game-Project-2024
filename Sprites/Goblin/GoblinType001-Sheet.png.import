@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdb5q5y62gkkq"
-path="res://.godot/imported/MergeDownBattle001Field.png-a635cd7a3b8c8122962378bda05c46f7.ctex"
+uid="uid://b0ox0ewl2tx8q"
+path="res://.godot/imported/GoblinType001-Sheet.png-b969dbd1a61b695d13ac19ab52a97e09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/WorldMap/Level 1/Battle001/MergeDownBattle001Field.png"
-dest_files=["res://.godot/imported/MergeDownBattle001Field.png-a635cd7a3b8c8122962378bda05c46f7.ctex"]
+source_file="res://Sprites/Goblin/GoblinType001-Sheet.png"
+dest_files=["res://.godot/imported/GoblinType001-Sheet.png-b969dbd1a61b695d13ac19ab52a97e09.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

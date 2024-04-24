@@ -1,6 +1,6 @@
 [remap]
 
-importer="aseprite_wizard.plugin.noop"
+importer="Aseprite Sprite2D Import"
 type="PackedDataContainer"
 uid="uid://yb6688ngbv2a"
 path="res://.godot/imported/GoblinType001.aseprite-e3711bbd413418ff2a2de17190eeeacd.res"
@@ -12,3 +12,17 @@ dest_files=["res://.godot/imported/GoblinType001.aseprite-e3711bbd413418ff2a2de1
 
 [params]
 
+spritesheet/layout=0
+spritesheet/fixed_rows_count=1
+spritesheet/fixed_columns_count=1
+spritesheet/border_type=0
+spritesheet/trim=false
+spritesheet/ignore_empty=false
+spritesheet/merge_duplicates=false
+animation/default/name="default"
+animation/default/direction=0
+animation/default/repeat_count=0
+animation/autoplay=""
+sprite2d/centered=true
+animation/strategy_(packed_spritesheet)=0
+animation/strategy_(grid-based_spritesheet)=0
