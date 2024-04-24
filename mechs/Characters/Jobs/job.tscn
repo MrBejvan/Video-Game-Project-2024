@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3f5eqw6nmo0e"]
+
+[ext_resource type="Script" path="res://mechs/Characters/Jobs/Job.gd" id="1_b5d4m"]
+
+[node name="Job" type="Node"]
+script = ExtResource("1_b5d4m")
+
+[node name="Stats" type="Node" parent="."]
+
+[node name="Skills" type="Node" parent="."]
