@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://61ce6e6o44te"]
 
-[ext_resource type="Script" path="res://MainGame/BattleScene/BattleScene001.gd" id="1_am63f"]
+[ext_resource type="Script" uid="uid://61ce6e6o44te" path="res://MainGame/BattleScene/BattleScene001.tscn" id="1_am63f"]
 [ext_resource type="Texture2D" uid="uid://cdb5q5y62gkkq" path="res://Sprites/WorldMap/Level 1/Battle001/MergeDownBattle001Field.png" id="1_v400y"]
 [ext_resource type="PackedScene" uid="uid://d8if1k8ktjxq" path="res://Sprites/SwordBoard/Player/PlayerBattler.tscn" id="2_54mg4"]
 [ext_resource type="PackedScene" uid="uid://u51jqj31xqif" path="res://Sprites/Goblin/GoblinEnemy.tscn" id="4_36yow"]
