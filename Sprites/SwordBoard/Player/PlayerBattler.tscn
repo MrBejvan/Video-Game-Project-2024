@@ -1,15 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://d8if1k8ktjxq"]
+
+[gd_scene load_steps=3 format=3 uid="uid://d8if1k8ktjxq"]
 
 [ext_resource type="Script" path="res://Sprites/SwordBoard/Player/PlayerBattler.gd" id="1_hojau"]
 [ext_resource type="Script" path="res://mechs/Characters/Battler/Battler.gd" id="1_lxrs5"]
-[ext_resource type="PackedScene" uid="uid://d4fer4hhvnvso" path="res://mechs/Characters/Jobs/job.tscn" id="3_2bk0r"]
-[ext_resource type="Resource" uid="uid://bgvakpdckr3nu" path="res://mechs/Characters/Jobs/Player.tres" id="4_6y2ks"]
+main
 
 [node name="PlayerBattler" type="Node2D"]
 script = ExtResource("1_hojau")
 
-[node name="Battler" type="Node" parent="."]
-script = ExtResource("1_lxrs5")
 
-[node name="Job" parent="." instance=ExtResource("3_2bk0r")]
-starting_stats = ExtResource("4_6y2ks")
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_lxrs5")main
