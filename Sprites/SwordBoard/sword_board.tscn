@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bl7q13f87m2h8"]
 
-[ext_resource type="Texture2D" uid="uid://xh5rqpuc8od6" path="res://Sprites/SwordBoard/SwordBoardCharacter-Sheet.png" id="1_bpmg1"]
+[ext_resource type="Texture2D" uid="uid://xh5rqpuc8od6" path="res://Sprites/SwordBoard/Player/SwordBoardCharacter-Sheet.png" id="1_bpmg1"]
 [ext_resource type="Script" path="res://Sprites/SwordBoard/sword_board.gd" id="1_qccm2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rx5am"]
@@ -191,92 +191,3 @@ metadata/_aseprite_wizard_interface_config_ = {
 libraries = {
 "": SubResource("AnimationLibrary_uunko")
 }
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Level" type="HBoxContainer" parent="UI"]
-offset_left = 78.0
-offset_top = 118.0
-offset_right = 192.0
-offset_bottom = 145.0
-
-[node name="Label" type="Label" parent="UI/Level"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 0
-text = "1"
-
-[node name="ProgressBar" type="ProgressBar" parent="UI/Level"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 1)
-layout_mode = 2
-max_value = 200.0
-
-[node name="Stats" type="HBoxContainer" parent="UI/Level"]
-layout_mode = 2
-
-[node name="Attribute" type="VBoxContainer" parent="UI/Level/Stats"]
-layout_mode = 2
-
-[node name="Total XP" type="Label" parent="UI/Level/Stats/Attribute"]
-layout_mode = 2
-text = "Total XP"
-
-[node name="Health" type="Label" parent="UI/Level/Stats/Attribute"]
-layout_mode = 2
-text = "Health"
-
-[node name="Strength" type="Label" parent="UI/Level/Stats/Attribute"]
-layout_mode = 2
-text = "Strength"
-
-[node name="Swift" type="Label" parent="UI/Level/Stats/Attribute"]
-layout_mode = 2
-text = "Swift"
-
-[node name="Defense" type="Label" parent="UI/Level/Stats/Attribute"]
-layout_mode = 2
-text = "Defense"
-
-[node name="Value" type="VBoxContainer" parent="UI/Level/Stats"]
-layout_mode = 2
-
-[node name="Total XP" type="Label" parent="UI/Level/Stats/Value"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 10)
-layout_mode = 2
-horizontal_alignment = 2
-
-[node name="Health" type="Label" parent="UI/Level/Stats/Value"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 10)
-layout_mode = 2
-horizontal_alignment = 2
-
-[node name="Strength" type="Label" parent="UI/Level/Stats/Value"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 10)
-layout_mode = 2
-horizontal_alignment = 2
-
-[node name="Swift" type="Label" parent="UI/Level/Stats/Value"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 10)
-layout_mode = 2
-horizontal_alignment = 2
-
-[node name="Defense" type="Label" parent="UI/Level/Stats/Value"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 10)
-layout_mode = 2
-horizontal_alignment = 2
-
-[node name="Button" type="Button" parent="UI"]
-offset_left = 272.0
-offset_top = 62.0
-offset_right = 314.0
-offset_bottom = 93.0
-text = "+ XP
-"
-
-[connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]
