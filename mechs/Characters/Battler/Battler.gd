@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 #This class combined with CharacterStats can be applied to both player character(s) and enemies
 class_name Battler
