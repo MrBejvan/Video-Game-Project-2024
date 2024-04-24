@@ -26,10 +26,6 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Video-game-project-2024"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/nklbdev.aseprite_importers/plugin.cfg")
-
 [input]
 
 ui_left={
