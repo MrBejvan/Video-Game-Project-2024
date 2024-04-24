@@ -15,6 +15,13 @@ run/main_scene="res://MainGame/WorldMapScene/WorldMap.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=256
+window/size/viewport_height=192
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="Video-game-project-2024"
