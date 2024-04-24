@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://u51jqj31xqif"]
+
+[ext_resource type="Script" path="res://Sprites/Goblin/GoblinEnemy.gd" id="1_j4aoh"]
+[ext_resource type="Script" path="res://mechs/Characters/Battler/Battler.gd" id="1_litk5"]
+[ext_resource type="Script" path="res://mechs/Characters/Jobs/Job.gd" id="3_qw0dl"]
+[ext_resource type="Resource" uid="uid://cd3onurn6vrbe" path="res://mechs/Characters/Jobs/Goblin.tres" id="4_mawcb"]
+[ext_resource type="Script" path="res://mechs/Characters/CharacterStats.gd" id="5_bpnbw"]
+[ext_resource type="Script" path="res://mechs/Characters/Jobs/stats.gd" id="6_udcfw"]
+
+[node name="GoblinEnemy" type="Node2D"]
+script = ExtResource("1_j4aoh")
+
+[node name="GoblinBattlerNode" type="Node" parent="."]
+script = ExtResource("1_litk5")
+
+[node name="GoblinJobNode" type="Node" parent="."]
+script = ExtResource("3_qw0dl")
+starting_stats = ExtResource("4_mawcb")
+
+[node name="GoblinStatsNode" type="Node" parent="GoblinJobNode"]
+script = ExtResource("6_udcfw")
+
+[node name="GoblinCharacterNode" type="Node" parent="."]
+script = ExtResource("5_bpnbw")
