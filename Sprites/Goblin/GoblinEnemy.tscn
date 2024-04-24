@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://u51jqj31xqif"]
+[gd_scene load_steps=6 format=3 uid="uid://u51jqj31xqif"]
 
 [ext_resource type="Script" path="res://Sprites/Goblin/GoblinEnemy.gd" id="1_j4aoh"]
 [ext_resource type="Script" path="res://mechs/Characters/Battler/Battler.gd" id="1_litk5"]
 [ext_resource type="PackedScene" uid="uid://d3f5eqw6nmo0e" path="res://mechs/Characters/Jobs/job.tscn" id="3_y5w0w"]
 [ext_resource type="Resource" uid="uid://cd3onurn6vrbe" path="res://mechs/Characters/Jobs/Goblin.tres" id="4_06mga"]
+[ext_resource type="Texture2D" uid="uid://b0ox0ewl2tx8q" path="res://Sprites/Goblin/GoblinType001-Sheet.png" id="5_ecbbm"]
 
 [node name="GoblinEnemy" type="Node2D"]
 script = ExtResource("1_j4aoh")
@@ -13,3 +14,7 @@ script = ExtResource("1_litk5")
 
 [node name="Job" parent="." instance=ExtResource("3_y5w0w")]
 starting_stats = ExtResource("4_06mga")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("5_ecbbm")
+hframes = 15
