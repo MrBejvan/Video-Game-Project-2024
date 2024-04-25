@@ -22,3 +22,4 @@ func initialize(stats : StartingStats):
 func set_max_health(value):
 	max_health = max(0, value)
 
+#add healing and damage functions below as necessary

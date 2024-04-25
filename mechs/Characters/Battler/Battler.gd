@@ -3,19 +3,23 @@ extends Node
 #This class combined with CharacterStats can be applied to both player character(s) and enemies
 class_name Battler
 
-#reference to characterstats (skeleton for stats and attributes)
-@onready var stats : CharacterStats
+const DEFAULT_CHANCE = 0.75
 
+#reference to characterstats (skeleton for stats and attributes)
+@onready var stats : CharacterStats = $Job/Stats
+#character skills
+@onready var skills = $Job/Skills
 #current health 
 @onready var health : int = 0
 
 #initialize character with specific stats
 func _ready():
 	if stats != null:
+		print("Stats properly allocated from resource file")
 		health = stats.max_health
 		
 	else:
-		print("No Stats Assigned")
+		print("No stats Assigned")
 
 #basic attack function for combatant
 func attack(target : Node):
