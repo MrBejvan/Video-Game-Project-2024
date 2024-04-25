@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://n44rjeng8yrm"]
+
+[ext_resource type="Script" path="res://mechs/Characters/Jobs/Skill.gd" id="1_tcjvf"]
+
+[resource]
+script = ExtResource("1_tcjvf")
+skillName = "Learning by Doing"
+skillDescription = "A big attack"
+skillCost = 1
+baseDamage = 8
+successChance = 0.9

@@ -15,11 +15,14 @@ class_name Job
 #....
 
 func _ready():
+	#sanity check for file and resource paths
+	"""
 	print("Job node: ", self.get_path())
 	print("Stats node: ", stats.get_path())
 	print("Skills node: ", skills.get_path())
 	print("Starting stats: ", starting_stats)
 	print("Starting skills: ", starting_skills)
+	"""
 	
 	#sanity check for stats initialization
 	if (stats):
@@ -28,10 +31,10 @@ func _ready():
 		
 	#sanity check for skills initialization	
 	if starting_skills != null and starting_skills.size() > 0:
-		for skill in starting_skills:	
+		"""for skill in starting_skills:	
 			var new_skill = character_skill_scene.instance()
 			new_skill.initialize(skill)
-			skills.add_child(new_skill)
+			skills.add_child(new_skill) """
 	else:
 		print("No Skills in starting_skills[]")
 		pass	

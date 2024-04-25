@@ -11,6 +11,7 @@ var strength : int
 var swift : int
 var defense : int
 var num_skills_available : int
+var num_skill_resources : int
 
 func initialize(stats : StartingStats):
 	max_health = stats.max_health

@@ -3,7 +3,7 @@ extends Node
 class CharacterNode:
 	var battler : Battler   #use character_name as unique call?
 	var swift       # speed = swift (lol)
-	var nextUp      # ref to character with next highest speed score -> include blocks for tie
+	var nextUp      # ref to character with next highest speed score -> include blocks for tie and potential edgecases/errors
 
 
 func _init(battler):
