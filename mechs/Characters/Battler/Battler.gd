@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 #This class combined with CharacterStats can be applied to both player character(s) and enemies
 class_name Battler
@@ -15,7 +15,7 @@ const DEFAULT_CHANCE = 0.75
 #initialize character with specific stats
 func _ready():
 	if stats != null:
-		print("Stats properly allocated from resource file")
+		print("Stats properly allocated from resource file: ", stats)
 		health = stats.max_health
 		
 	else:
