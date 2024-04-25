@@ -1,12 +1,14 @@
+extends Node
+
 class CharacterNode:
-	var character   #use character_name as unique call?
-	var speed       # speed = swift (lol)
+	var battler : Battler   #use character_name as unique call?
+	var swift       # speed = swift (lol)
 	var nextUp      # ref to character with next highest speed score -> include blocks for tie
 
 
-func _init(character, speed):
-	self.character = character
-	self.speed = speed
+func _init(battler):
+	self.battler = battler
+	#self.swift = swift
 	self.next = null
 
 
@@ -16,7 +18,7 @@ class TurnTracker:
 	func _init():
 		head = null
 	
-	func insert(character, speed):                  #correct; insert based on character keyword map
+	func insert(battler, speed):                  #correct; insert based on character keyword map
 		var newTurnNode = CharacterNode.new()
 
 		if head == null:
@@ -36,7 +38,7 @@ class TurnTracker:
 			print("Empty")
 			return
 		while current.next != head:
-			print(current.character, ":", current.speed)
+			print(current.battler, ":", current.speed)
 			current = current.next
-		print(current.character, ":", current.seed)
+		print(current.battler, ":", current.seed)
 
