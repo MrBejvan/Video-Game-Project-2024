@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_8ecl1")
-job_name = "Job"
+job_name = "Goblin"
 max_health = 5
 strength = 2
 swift = 3
