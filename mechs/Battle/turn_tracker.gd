@@ -2,31 +2,39 @@ extends Node
 
 class CharacterNode:
 	var battler : Battler   #use character_name as unique call?
-	var swift       # speed = swift (lol)
+	var swift : int   # speed = swift (lol)
 	var nextUp      # ref to character with next highest speed score -> include blocks for tie and potential edgecases/errors
 
-
-func _init(battler):
-	self.battler = battler
-	#self.swift = swift
-	self.next = null
-
+	func _init(Battler):
+		self.battler = Battler
+		self.swift = 0
+		self.next = null
+		
+func getCharacterStats():
+	var hp: int = ($Battler.stats as CharacterStats).health
+	var swift: int = ($Battler.stats as CharacterStats).swift
+	print(hp)
+	print(swift)
 
 class TurnTracker:
 	var head
 
 	func _init():
 		head = null
+		print("TurnTracker initialized")
+		
 	
-	func insert(battler, speed):                  #correct; insert based on character keyword map
-		var newTurnNode = CharacterNode.new()
-
+	func insert(Battler, swift):                  #correct; insert based on character keyword map
+		var newTurnNode = CharacterNode.new(Battler)
+		#var newTurnNode.battler = battler
+		#var newTurnnode.swift = swift
+		
 		if head == null:
 			newTurnNode.next = newTurnNode
 			head = newTurnNode
 		else:
 			var current = head
-			while current.next != head and current.next.speed < speed:
+			while current.next != head and current.next.swift > swift:
 				current = current.next
 
 			newTurnNode.next = current.next
@@ -38,7 +46,10 @@ class TurnTracker:
 			print("Empty")
 			return
 		while current.next != head:
-			print(current.battler, ":", current.speed)
+			print(current.battler, ":", current.swift)
 			current = current.next
-		print(current.battler, ":", current.seed)
+		print(current.battler, ":", current.swift)
+		
+	func _ready():
+		printTracker()
 

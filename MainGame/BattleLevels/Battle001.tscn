@@ -12,11 +12,11 @@ offset_right = 256.0
 offset_bottom = 192.0
 texture = ExtResource("1_om35p")
 
+[node name="TurnTracker" type="Node" parent="."]
+script = ExtResource("4_4lx5h")
+
 [node name="Player" parent="." instance=ExtResource("2_fjapp")]
 position = Vector2(104, 104)
 
 [node name="GoblinEnemy" parent="." instance=ExtResource("2_epj4r")]
 position = Vector2(172, 104)
-
-[node name="TurnTracker" type="Node" parent="."]
-script = ExtResource("4_4lx5h")

@@ -16,7 +16,7 @@ const DEFAULT_CHANCE = 0.75
 func _ready():
 	if stats != null:
 		print("Stats properly allocated from resource file: ", stats)
-		health = stats.max_health
+		health = stats.max_health 
 		
 	else:
 		print("No stats Assigned")
