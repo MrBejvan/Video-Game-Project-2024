@@ -1,5 +1,6 @@
 extends Node
 
+#class_name TurnTracker
 class CharacterNode:
 	var battler : Battler   #use character_name as unique call?
 	var swift : int   # speed = swift (lol)
@@ -10,21 +11,25 @@ class CharacterNode:
 		self.swift = 0
 		self.next = null
 		
+
 func getCharacterStats():
 	var hp: int = ($Battler.stats as CharacterStats).health
 	var swift: int = ($Battler.stats as CharacterStats).swift
 	print(hp)
 	print(swift)
 
+
 class TurnTracker:
-	var head
+	var head = null
+	var initialized = false
 
 	func _init():
 		head = null
+		initialized = true
 		print("TurnTracker initialized")
 		
 	
-	func insert(Battler, swift):                  #correct; insert based on character keyword map
+	func insert(battler, swift):                  #correct; insert based on character keyword map
 		var newTurnNode = CharacterNode.new(Battler)
 		#var newTurnNode.battler = battler
 		#var newTurnnode.swift = swift
@@ -49,7 +54,5 @@ class TurnTracker:
 			print(current.battler, ":", current.swift)
 			current = current.next
 		print(current.battler, ":", current.swift)
-		
-	func _ready():
-		printTracker()
+
 

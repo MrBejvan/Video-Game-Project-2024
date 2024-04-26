@@ -9,4 +9,5 @@ max_health = 5
 strength = 2
 swift = 3
 defense = 2
-num_skills_available = 1
+num_skills_avaible = 0
+num_skill_resources = 0

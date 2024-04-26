@@ -17,6 +17,10 @@ func _ready():
 	if stats != null:
 		print("Stats properly allocated from resource file: ", stats)
 		health = stats.max_health 
+		print("health ", health)
+		print("strength ", stats.strength)
+		print("defense ", stats.defense)
+		print("swift ", stats.swift)
 		
 	else:
 		print("No stats Assigned")
