@@ -17,14 +17,15 @@ func findCharacterNodes():
 		else:
 			print("no nodes found")
 			return
-		"""
 		print("node in rootNode: ", node)
+		"""
 		#checks for method identifying that children nodes of root have property 'character'
 		if node.has_method("isCharacter"):
-			print("node has isCharacter method")
+			#sanity check
+			#print("node has isCharacter method")
 			sceneChildrenNodes.append(node)
 	
-	print(sceneChildrenNodes)
+	print("Characters in current scene: ", sceneChildrenNodes)
 	return sceneChildrenNodes
 	
 	

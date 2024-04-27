@@ -19,16 +19,13 @@ func isCharacter ():
 
 #initialize character with specific stats
 func _ready():
-	if stats != null:
-		print("Stats properly allocated from resource file: ", stats)
-		health = stats.max_health 
-		print("health ", health)
-		print("strength ", stats.strength)
-		print("defense ", stats.defense)
-		print("swift ", stats.swift)
-		
-	else:
-		print("No stats Assigned")
+	var swift = stats.swift
+	print(swift)
+	var battler = stats.job_name
+	print(battler)
+	var hp = stats.health
+	print(hp)
+
 
 #basic attack function for combatant
 func attack(target : Node):

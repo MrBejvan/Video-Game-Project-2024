@@ -9,7 +9,7 @@ class CharacterNode:
 	var swift : int   # speed = swift (lol)
 	var nextUp: CharacterNode      # ref to character with next highest speed score -> include blocks for tie and potential edgecases/errors
 
-	func _init(battler, swift):
+	func _init():
 		self.battler = battler
 		self.swift = swift
 		self.next = null
@@ -21,8 +21,10 @@ var initialized := false
 func _init():
 	initialized = true
 
-func insert(battler, swift):                  #correct; insert based on character keyword map
-	var newTurnNode = CharacterNode.new(battler, swift)
+func insert(battler, swift):
+	var newTurnNode = CharacterNode.new()
+	newTurnNode.battler = battler
+	newTurnNode.swift = swift
 	
 	if head == null:
 		newTurnNode.next = newTurnNode
