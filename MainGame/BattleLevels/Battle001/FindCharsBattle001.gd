@@ -1,8 +1,8 @@
 extends Node
 
 func findCharacterNodes():
-	var rootNode = get_tree().get_root()
-	print(rootNode)
+	var rootNode = get_tree().get_current_scene()
+	print("rootNode is: ", rootNode)
 	
 	#var allNodes = rootNode.get_children()
 	var sceneChildrenNodes = []
@@ -18,6 +18,7 @@ func findCharacterNodes():
 			print("no nodes found")
 			return
 		"""
+		print("node in rootNode: ", node)
 		#checks for method identifying that children nodes of root have property 'character'
 		if node.has_method("isCharacter"):
 			print("node has isCharacter method")
