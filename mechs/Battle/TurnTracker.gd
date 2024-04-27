@@ -14,14 +14,6 @@ class CharacterNode:
 		self.swift = swift
 		self.next = null
 		print("CharacterNode initialized with ", self.battler, "and speed", self.swift)
-		
-"""
-func getCharacterStats():
-	var hp: int = ($Battler.stats as CharacterStats).health
-	var swift: int = ($Battler.stats as CharacterStats).swift
-	print(hp)
-	print(swift)
-"""
 
 var head : CharacterNode = null
 var initialized := false
