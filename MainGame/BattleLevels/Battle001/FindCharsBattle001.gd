@@ -1,9 +1,35 @@
-#Find a way to make this more universal so that the nodes added to the group don't need to be called by specific names - something like below...
-
 extends Node
 
-#define/pass in node as root of BattleScene tree
-
+func findCharacterNodes():
+	var rootNode = get_tree().get_root()
+	print(rootNode)
+	
+	#var allNodes = rootNode.get_children()
+	var sceneChildrenNodes = []
+	
+	for node in rootNode.get_children():
+		#sanity check
+		"""
+		if node:
+			print("nodes found")
+			return
+			
+		else:
+			print("no nodes found")
+			return
+		"""
+		#checks for method identifying that children nodes of root have property 'character'
+		if node.has_method("isCharacter"):
+			print("node has isCharacter method")
+			sceneChildrenNodes.append(node)
+	
+	print(sceneChildrenNodes)
+	return sceneChildrenNodes
+	
+	
+	
+#---
+#Thought I needed this, but found a built-in function called get_children() -> do not need children of children in scene tree for this functionality
 """
 func getChildrenRecursive(node):
 	var childNodeArr := []
@@ -20,29 +46,7 @@ func getChildrenRecursive(node):
 	print(childNodeArr)		
 	return childNodeArr
 """
-
-func findCharacterNodes():
-	var rootNode = get_tree().get_root()
-	print(rootNode)
-	
-	var allNodes = rootNode.get_children()
-	var sceneChildrenNodes = []
-	
-	for node in allNodes:
-		if node:
-			print("nodes found")
-			return
-			
-		else:
-			print("no nodes found")
-			return
-		
-		# Example: Check if the node has a specific script or property
-		if node.has_method("is_character"):  # Assuming a method that identifies character nodes
-			sceneChildrenNodes.append(node)
-	
-	return sceneChildrenNodes
-
+#original implementation, but was limiting to functionality and required more work than was necessary
 """
 func findCharacterNodes():
 	if $Player:

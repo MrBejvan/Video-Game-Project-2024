@@ -7,9 +7,8 @@ const DEFAULT_CHANCE = 0.75
 
 
 #add method for identifying as 'character' 
-
-
-
+func isCharacter ():
+	return true
 
 #reference to characterstats (skeleton for stats and attributes)
 @onready var stats : CharacterStats = $Job/Stats
