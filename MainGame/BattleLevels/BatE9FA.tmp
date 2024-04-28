@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1ig8vy0y0dd3"]
+
+[ext_resource type="Texture2D" uid="uid://cdb5q5y62gkkq" path="res://Sprites/WorldMap/Level 1/Battle001/MergeDownBattle001Field.png" id="1_om35p"]
+[ext_resource type="PackedScene" uid="uid://u51jqj31xqif" path="res://Sprites/Goblin/GoblinEnemy.tscn" id="2_epj4r"]
+[ext_resource type="PackedScene" uid="uid://cjew5s47tqpad" path="res://Sprites/Player/player.tscn" id="2_fjapp"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/BattleManager.gd" id="4_nhtfy"]
+[ext_resource type="Script" path="res://mechs/Battle/TurnTracker.gd" id="5_7ed0e"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/Battle001/FindCharsBattle001.gd" id="6_g4bhf"]
+
+[node name="Battle001" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 256.0
+offset_bottom = 192.0
+texture = ExtResource("1_om35p")
+
+[node name="Player" parent="." instance=ExtResource("2_fjapp")]
+position = Vector2(104, 104)
+
+[node name="GoblinEnemy" parent="." instance=ExtResource("2_epj4r")]
+position = Vector2(172, 104)
+
+[node name="BattleManager" type="Node" parent="."]
+script = ExtResource("4_nhtfy")
+
+[node name="TurnTracker" type="Node" parent="BattleManager"]
+script = ExtResource("5_7ed0e")
+
+[node name="FindCharsBattle001" type="Node" parent="BattleManager"]
+script = ExtResource("6_g4bhf")

@@ -16,39 +16,40 @@ class CharacterNode:
 		print("CharacterNode initialized with ", self.battler, "and speed", self.swift)
 
 
-var head : CharacterNode = null
 var initialized := false
 
 #add to init above?
 func _init():
 	initialized = true
+	#var head : CharacterNode = null
 
-"""	
 func _ready():
 	var characterStats : CharacterStats
-"""
 
 	
 func insert(battler, health, swift):
+	var head : CharacterNode = null
+	
 	var newTurnNode = CharacterNode.new()
 	newTurnNode.battler = battler
 	newTurnNode.health = health
 	newTurnNode.swift = swift
-	newTurnNode.nextUp = head
+	newTurnNode.nextUp = null
 	
 	if head == null:
-		newTurnNode.next = newTurnNode
+		newTurnNode.nextUp = newTurnNode
 		head = newTurnNode
 		print("Added first node to TurnTracker: ", head.battler, "with speed: ", head.swift)
 	else:
 		var current = head
-		while current.next != head and current.next.swift > swift:
-			current = current.next
+		while current.nextUp != head and current.nextUp.swift > swift:
+			current = current.nextUp
 
-		newTurnNode.next = current.next
-		current.next  = newTurnNode
+		newTurnNode.nextUp = current.nextUp
+		current.nextUp  = newTurnNode
 
 func printTracker():
+	var head : CharacterNode = null
 	var current = head
 	if current == null:
 		print("Tracker is empty")
