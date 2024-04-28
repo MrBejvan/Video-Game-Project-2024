@@ -4,15 +4,8 @@ class_name BattleManager
 
 var turnTracker : TurnTracker = null
 
-"""
-#sanity check
-func _init():
-	var foo = $Player/Job/Stats
-	print("foo: ", foo)
-"""	
-
 func _ready():
-	var turnTracker = TurnTracker.new()
+	turnTracker = TurnTracker.new()
 	if turnTracker:
 		turnTracker._init()
 		print("Initialized TurnTracker in BattleManager")
