@@ -21,14 +21,17 @@ func isCharacter():
 
 func _ready():
 	
+	"""
+	#sanity check
 	if stats.job_name:
 		print("stats job_name is good: ", stats.job_name)
+	
 	
 	var job_name = $Job/Stats.job_name
 	var hp = stats.health
 	var swift = stats.swift
 	print(job_name, hp, swift)
-
+	"""
 #basic attack function for combatant
 func attack(target : Node):
 	if target.has_method("take_damage"):

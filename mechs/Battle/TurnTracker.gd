@@ -2,6 +2,8 @@ extends Node
 
 class_name TurnTracker
 
+var head : CharacterNode = null
+
 class CharacterNode:
 	var battler : String
 	var health : int
@@ -21,7 +23,7 @@ var initialized := false
 #add to init above?
 func _init():
 	initialized = true
-	#var head : CharacterNode = null
+	var head : CharacterNode = null
 
 func _ready():
 	var characterStats : CharacterStats
@@ -29,6 +31,7 @@ func _ready():
 	
 func insert(battler, health, swift):
 	var head : CharacterNode = null
+	var current : CharacterNode = null
 	
 	var newTurnNode = CharacterNode.new()
 	newTurnNode.battler = battler
@@ -39,17 +42,17 @@ func insert(battler, health, swift):
 	if head == null:
 		newTurnNode.nextUp = newTurnNode
 		head = newTurnNode
-		print("Added first node to TurnTracker: ", head.battler, "with speed: ", head.swift)
+		print("Added node to TurnTracker: ", head.battler, " with speed: ", head.swift)
 	else:
-		var current = head
+		current = head
 		while current.nextUp != head and current.nextUp.swift > swift:
 			current = current.nextUp
 
 		newTurnNode.nextUp = current.nextUp
 		current.nextUp  = newTurnNode
+	return head, current
 
-func printTracker():
-	var head : CharacterNode = null
+func printTracker():	
 	var current = head
 	if current == null:
 		print("Tracker is empty")
