@@ -5,9 +5,11 @@ class_name Battler
 
 const DEFAULT_CHANCE = 0.75
 
+
 #add method for identifying as 'character' 
 func isCharacter():
 	return true
+
 
 #reference to characterstats (skeleton for stats and attributes)
 @onready var stats : CharacterStats = $Job/Stats
@@ -17,23 +19,11 @@ func isCharacter():
 @onready var health : int = 0
 
 
-"""var battler := "Default"
-var hp := 0
-var swift := 0
-var nextUp
-"""
-
-
-#initialize character with specific stats
 func _ready():
-	var battler = stats.job_name
-	print("battler: ", battler)
+	var jobName = $Job/Stats.job_name
 	var hp = stats.health
-	print(hp)
 	var swift = stats.swift
-	print(swift)
-	print("")
-
+	print(jobName, hp, swift)
 
 #basic attack function for combatant
 func attack(target : Node):

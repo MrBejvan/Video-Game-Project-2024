@@ -3,6 +3,11 @@ extends Node
 class_name BattleManager
 
 var turnTracker : TurnTracker = null
+"""
+func _init():
+	var foo = $Player/Job/Stats
+	print("foo: ", foo)
+"""	
 
 func _ready():
 	turnTracker = TurnTracker.new()
@@ -16,9 +21,9 @@ func addBattlerToTracker():
 	print("charNodes Array: ", charNodes)
 	if turnTracker:
 		for char in charNodes:
-			print("char: ", char.battler, " swift: ", char.swift)
-			turnTracker.insert(char.battler, char.swift)
-			print("Added battler to TurnTracker")
+			print("char: ", char.jobName, " swift: ", char.swift)
+			turnTracker.insert(char.jobName, char.swift)
+			print("Added ", char.jobName, " to TurnTracker")
 		
 func printTurnOrder():
 	if turnTracker:

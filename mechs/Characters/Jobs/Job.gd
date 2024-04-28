@@ -2,7 +2,7 @@ extends Node
 
 class_name Job
 
-@onready var stats = $Stats
+@onready var stats : CharacterStats = $Stats
 @onready var skills = $Skills
 
 @export var starting_stats : StartingStats
