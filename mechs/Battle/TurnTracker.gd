@@ -4,14 +4,14 @@ class_name TurnTracker
 
 class CharacterNode:
 	var battler : String
-	var hp : int
+	var health : int
 	var swift : int   
 	var nextUp: CharacterNode      # ref to character with next highest speed score -> include blocks for tie and potential edgecases/errors
 
 	func _init():
 		self.battler
 		self.swift
-		self.hp
+		self.health
 		self.nextUp
 		print("CharacterNode initialized with ", self.battler, "and speed", self.swift)
 
@@ -29,10 +29,10 @@ func _ready():
 """
 
 	
-func insert(battler, swift):
+func insert(battler, health, swift):
 	var newTurnNode = CharacterNode.new()
 	newTurnNode.battler = battler
-	newTurnNode.hp = battler.hp
+	newTurnNode.health = health
 	newTurnNode.swift = swift
 	newTurnNode.nextUp = head
 	

@@ -23,8 +23,8 @@ func addBattlerToTracker():
 		for c in charNodes:
 			if c.has_node("Job/Stats"):
 				var stats = c.get_node("Job/Stats")
-				print("char: ", stats.job_name, " swift: ", stats.swift)
-				turnTracker.insert(stats.job_name, stats.swift)
+				print("char: ", stats.job_name, " swift: ", stats.swift, "health: ", stats.health)
+				turnTracker.insert(stats.job_name, stats.swift, stats.health)
 				print("Added ", stats.job_name, " to TurnTracker")
 			else:
 				print("c doesn't have node")
