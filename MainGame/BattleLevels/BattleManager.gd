@@ -20,15 +20,18 @@ func addBattlerToTracker():
 	var charNodes = $FindCharsBattle001.findCharacterNodes() as Array
 	print("charNodes Array: ", charNodes)
 	if turnTracker:
-		for char in charNodes:
-			print("char: ", char.jobName, " swift: ", char.swift)
-			turnTracker.insert(char.jobName, char.swift)
-			print("Added ", char.jobName, " to TurnTracker")
+		for c in charNodes:
+			if c.has_node("Job/Stats"):
+				var stats = c.get_node("Job/Stats")
+				print("char: ", stats.job_name, " swift: ", stats.swift)
+				turnTracker.insert(stats.job_name, stats.swift)
+				print("Added ", stats.job_name, " to TurnTracker")
+			else:
+				print("c doesn't have node")
 		
 func printTurnOrder():
 	if turnTracker:
 		turnTracker.printTracker()
-	
 
 """	
 func getCharacterStats():
