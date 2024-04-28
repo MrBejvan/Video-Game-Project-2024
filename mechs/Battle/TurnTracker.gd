@@ -2,29 +2,35 @@ extends Node
 
 class_name TurnTracker
 
-#class_name TurnTracker
 class CharacterNode:
-	var battler : Battler   #use character_name as unique call?
-	var name : String
-	var swift : int   # speed = swift (lol)
+	var battler : String
+	var hp : int
+	var swift : int   
 	var nextUp: CharacterNode      # ref to character with next highest speed score -> include blocks for tie and potential edgecases/errors
 
 	func _init():
-		self.battler = battler
-		self.swift = swift
-		self.next = null
+		self.battler
+		self.swift
+		self.hp
+		self.nextUp
 		print("CharacterNode initialized with ", self.battler, "and speed", self.swift)
 
 var head : CharacterNode = null
 var initialized := false
 
+#add to init above?
 func _init():
 	initialized = true
-
+	
+func _ready():
+	var characterStats : CharacterStats
+	
 func insert(battler, swift):
 	var newTurnNode = CharacterNode.new()
 	newTurnNode.battler = battler
+	newTurnNode.hp = battler.hp
 	newTurnNode.swift = swift
+	newTurnNode.nextUp = head
 	
 	if head == null:
 		newTurnNode.next = newTurnNode

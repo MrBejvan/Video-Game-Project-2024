@@ -5,9 +5,8 @@ class_name Battler
 
 const DEFAULT_CHANCE = 0.75
 
-
 #add method for identifying as 'character' 
-func isCharacter ():
+func isCharacter():
 	return true
 
 #reference to characterstats (skeleton for stats and attributes)
@@ -17,14 +16,23 @@ func isCharacter ():
 #current health 
 @onready var health : int = 0
 
+
+"""var battler := "Default"
+var hp := 0
+var swift := 0
+var nextUp
+"""
+
+
 #initialize character with specific stats
 func _ready():
-	var swift = stats.swift
-	print(swift)
 	var battler = stats.job_name
-	print(battler)
+	print("battler: ", battler)
 	var hp = stats.health
 	print(hp)
+	var swift = stats.swift
+	print(swift)
+	print("")
 
 
 #basic attack function for combatant
@@ -46,8 +54,6 @@ func take_damage(hit):
 func die():
 	pass
 	
-		
-		
 #can add modifier funcs here
 		
 
