@@ -17,11 +17,21 @@ class CharacterNode:
 func _init():
 	intitialized = true
 	
+	"""
+	var stats = get_node("Job/Stats")
+	var job_name = stats.job_name
+	var health = stats.health
+	var swift = stats.swift
+	"""
 
 func _ready():
-	var characterStats : CharacterStats
-	if characterStats:
-		print("ready: ", characterStats.job_name, " ", characterStats.health, " ", characterStats.swift)
+	var stats : CharacterStats = get_parent().get_node("CharacterStats")
+	
+	if stats:
+		print("ready: ", stats.job_name, " ", stats.health, " ", stats.swift)
+		
+	else:
+		print("stats not valid")
 
 	
 func insert(job_name, health, swift):
@@ -32,10 +42,8 @@ func insert(job_name, health, swift):
 	newTurnNode.swift = swift
 	newTurnNode.nextUp = null
 	
-	print(newTurnNode.job_name, " ", newTurnNode.health, " ", newTurnNode.swift)
-	
 	#sanity check
-	print("Added node to TurnTracker: ", newTurnNode.job_name, " with speed: ", newTurnNode.swift)
+	print("Added node to TurnTracker: ", newTurnNode.job_name, " ", newTurnNode.health, " ", newTurnNode.swift)
 	
 	if head == null:
 		newTurnNode.nextUp = newTurnNode
@@ -54,7 +62,7 @@ func insert(job_name, health, swift):
 		if current.nextUp == head:
 			head = newTurnNode
 			
-	print("first up is ", current.job_name, "with ", current.nextUp.job_name, "up next")
+	print("first up is ", current.job_name, "with ", current.nextUp.job_name, " up next")
 	return head
 
 func printTracker():	
