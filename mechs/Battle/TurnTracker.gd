@@ -61,8 +61,10 @@ func insert(job_name, health, swift):
 	#print("first up is ", current.job_name, " with ", current.nextUp.job_name, " up next")
 	return head
 	
-	
-	
+
+
+#output suggests that sorting is not correct - work through and verify/test
+
 func sortTurnTracker():
 	if head == null:
 		print("TurnTracker is empty; Cannot sort")
@@ -78,17 +80,13 @@ func sortTurnTracker():
 			break
 			
 	sortHelper(nodes)
-	
-	head = nodes[0].job_name
-	current = head
-	current.nextUp = nodes[1]
-	
-	while current.nextUp != head:
-		current = current.nextUp
+
+	for i in range(nodes.size()):
+		nodes[i].nextUp = nodes[(i + 1) % nodes.size()]
 		
-	return current
-		
-	
+	head = nodes[0]
+	print("head: ", head.job_name)
+	return head
 	
 func sortHelper(nodesArr):
 	var n = nodesArr.size()
@@ -96,9 +94,12 @@ func sortHelper(nodesArr):
 	
 	while swapped:
 		swapped = false
-		for i in range(n // 2):
-			if nodesArr[i].swift > nodesArr[i + n // 2].swift:
-				nodesArr[i], nodesArr[i + n // 2] = [i + n // 2], nodesArr[i]
+		for i in range(n % 2):
+			if nodesArr[i].swift > nodesArr[i + n % 2].swift:
+				var temp
+				temp = nodesArr[i]
+				nodesArr[i] = nodesArr[i + n % 2]
+				nodesArr[i + n % 2] = temp
 				swapped = true
 			
 		
