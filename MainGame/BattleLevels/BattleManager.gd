@@ -19,7 +19,7 @@ func _ready():
 	printTurnOrder()
 
 func addBattlerToTracker():
-	var charNodes = $FindCharsBattle001.findCharacterNodes() as Array
+	var charNodes = $FindCharsForBattle.findCharacterNodes() as Array
 	if turnTracker:
 		for c in charNodes:
 			if c.has_node("Job/Stats"):
