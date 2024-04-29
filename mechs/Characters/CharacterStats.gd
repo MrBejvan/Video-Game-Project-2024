@@ -20,7 +20,7 @@ func initialize(stats : StartingStats):
 	strength = stats.strength
 	swift = stats.swift
 	defense = stats.defense
-	health = max_health
+	health = stats.max_health
 	num_skills_available = num_skills_available
 	num_skill_resources = num_skill_resources
 	

@@ -2,12 +2,15 @@ extends Node
 
 func findCharacterNodes():
 	var rootNode = get_tree().get_current_scene()
-	print("rootNode is: ", rootNode)
 	
+	#sanity check
+	#print("rootNode is: ", rootNode)
 	#var allNodes = rootNode.get_children()
+	
 	var sceneChildrenNodes = []
 	
 	for node in rootNode.get_children():
+		
 		#sanity check
 		"""
 		if node:
@@ -25,7 +28,9 @@ func findCharacterNodes():
 			#print("node has isCharacter method")
 			sceneChildrenNodes.append(node)
 	
-	print("Characters in current scene: ", sceneChildrenNodes)
+	#sanity check
+	#print("Characters in current scene: ", sceneChildrenNodes)
+	
 	return sceneChildrenNodes
 	
 	

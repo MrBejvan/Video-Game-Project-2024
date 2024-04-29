@@ -20,7 +20,7 @@ func isCharacter():
 
 
 func _ready():
-	
+	print(stats)
 	"""
 	#sanity check
 	if stats.job_name:
@@ -32,6 +32,7 @@ func _ready():
 	var swift = stats.swift
 	print(job_name, hp, swift)
 	"""
+	
 #basic attack function for combatant
 func attack(target : Node):
 	if target.has_method("take_damage"):
