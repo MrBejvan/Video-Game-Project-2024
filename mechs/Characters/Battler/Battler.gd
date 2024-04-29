@@ -17,22 +17,6 @@ func isCharacter():
 @onready var skills = $Job/Skills
 #current health 
 @onready var health : int = 0
-
-
-func _ready(): 
-	stats
-	print(stats.swift)
-	"""
-	#sanity check
-	if stats.job_name:
-		print("stats job_name is good: ", stats.job_name)
-	
-	
-	var job_name = $Job/Stats.job_name
-	var hp = stats.health
-	var swift = stats.swift
-	print(job_name, hp, swift)
-	"""
 	
 #basic attack function for combatant
 func attack(target : Node):
