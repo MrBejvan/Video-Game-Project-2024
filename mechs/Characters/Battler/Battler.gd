@@ -19,8 +19,9 @@ func isCharacter():
 @onready var health : int = 0
 
 
-func _ready():
-	print(stats)
+func _ready(): 
+	stats
+	print(stats.swift)
 	"""
 	#sanity check
 	if stats.job_name:

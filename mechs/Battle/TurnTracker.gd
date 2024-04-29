@@ -25,7 +25,10 @@ func _init():
 	"""
 
 func _ready():
-	var stats : CharacterStats = get_parent().get_node("CharacterStats")
+	var parentNode = get_parent()
+	print(parentNode)
+	var stats : CharacterStats = parentNode.get_parent().get_node("Stats")
+
 	
 	if stats:
 		print("ready: ", stats.job_name, " ", stats.health, " ", stats.swift)
@@ -35,6 +38,8 @@ func _ready():
 
 	
 func insert(job_name, health, swift):
+	print("sanity check: ")
+	print(job_name, " ", health, " ", swift)
 		
 	var newTurnNode = CharacterNode.new()
 	newTurnNode.job_name = job_name
@@ -48,6 +53,9 @@ func insert(job_name, health, swift):
 	if head == null:
 		newTurnNode.nextUp = newTurnNode
 		head = newTurnNode
+		head.health = health
+		head.swift = swift
+		current = head
 		
 		#sanity check
 		print("head was null. head set to: ", head, "with a speed of ", head.swift, " and with ", head.health, " health")
@@ -71,7 +79,7 @@ func printTracker():
 		print("Tracker is empty")
 		return
 		
-	var temp = current	
+	#var temp = current	
 	while current.nextUp != head:
 		print(current.job_name, ":", current.swift)
 		current = current.nextUp

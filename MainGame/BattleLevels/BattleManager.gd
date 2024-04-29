@@ -23,15 +23,13 @@ func addBattlerToTracker():
 				#sanity check
 				print("char: ", stats.job_name, " swift: ", stats.swift, " health: ", stats.health)
 				
-				turnTracker.insert(stats.job_name, stats.swift, stats.health)
+				turnTracker.insert(stats.job_name, stats.health, stats.swift)
 				
-				return stats
 				#sanity check
 				#print("Added ", stats.job_name, " to TurnTracker")
 			else:
 				print("c doesn't have stats node")
-	
-	
+		
 func printTurnOrder():
 	if turnTracker:
 		turnTracker.printTracker()
