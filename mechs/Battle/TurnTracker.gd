@@ -41,14 +41,14 @@ func insert(job_name, health, swift):
 	if head == null:
 		newTurnNode.nextUp = newTurnNode
 		head = newTurnNode
+	if current == null:
 		current = head
 		
 		#sanity check
-		print("head was null. head set to: ", head.job_name, "with a speed of ", head.swift, " and with ", head.health, " health")
-		
+		print("head was null. head set to: ", head.job_name, " with a speed of ", head.swift, " and with ", head.health, " health")
+	
 	else:
-		current = head
-		while current.nextUp != head and current.nextUp.swift >= swift:
+		while current.nextUp != head and current.nextUp.swift <= current.swift:
 			current = current.nextUp
 
 		newTurnNode.nextUp = current.nextUp
@@ -62,48 +62,49 @@ func insert(job_name, health, swift):
 	return head
 	
 
-
 #output suggests that sorting is not correct - work through and verify/test
-
 func sortTurnTracker():
 	if head == null:
 		print("TurnTracker is empty; Cannot sort")
 		return
 	
 	var nodes = []
+	var temp = head
 	current = head
+	#print("current: ", current.job_name)
 	
 	while true:
+		#print("current: ", current.job_name, " will be added to nodes array")
 		nodes.append(current)
 		current = current.nextUp
-		if current == head:
+		if current == temp:
 			break
 			
+	#sort the nodes array by swift data from highest to lowest		
 	sortHelper(nodes)
-
+	
 	for i in range(nodes.size()):
 		nodes[i].nextUp = nodes[(i + 1) % nodes.size()]
-		
-	head = nodes[0]
-	print("head: ", head.job_name)
-	return head
 	
-func sortHelper(nodesArr):
-	var n = nodesArr.size()
+	head = nodes[0]	
+	print("CharacterNodes re-linked. Head set to: ", head.job_name)
+	
+	current = head
+	print("Current set to: ", current.job_name, " with ", current.nextUp.job_name, " up next")
+	
+func sortHelper(nodes):
+	var n = nodes.size()
 	var swapped = true
 	
 	while swapped:
 		swapped = false
-		for i in range(n % 2):
-			if nodesArr[i].swift > nodesArr[i + n % 2].swift:
-				var temp
-				temp = nodesArr[i]
-				nodesArr[i] = nodesArr[i + n % 2]
-				nodesArr[i + n % 2] = temp
+		for i in range(n - 1):
+			if nodes[i].swift < nodes[i + 1].swift:
+				var temp = nodes[i]
+				print("node[i]: ", nodes[i].job_name)
+				nodes[i] = nodes[i + 1]
+				nodes[i + 1] = temp
 				swapped = true
-			
-		
-
 	
 func countCharsInTracker():
 	var count = 0
@@ -130,7 +131,6 @@ func printTracker():
 		print("Tracker is empty")
 		return
 		
-	#var temp = current	
 	while current.nextUp != head:
 		print(current.job_name, ":", current.swift)
 		current = current.nextUp

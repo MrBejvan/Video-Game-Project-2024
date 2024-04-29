@@ -11,11 +11,11 @@ func _ready():
 		print("Initialized TurnTracker in BattleManager")
 	addBattlerToTracker()
 	var count = countTracker()
-	print(count)
 	if count > 0:
+		print(count)
 		sortTracker()
 		
-	print("")
+	print("printing turn order: ")
 	printTurnOrder()
 
 func addBattlerToTracker():
