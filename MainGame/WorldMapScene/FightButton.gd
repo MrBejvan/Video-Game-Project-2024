@@ -6,7 +6,7 @@ var scenePath
 var parent_node = "res://MainGame/WorldMapScene/WorldMap.tscn"
 
 func _on_ready():
-	var area
+	var area : Area2D
 	area.connect("player_entered", self, "_on_player_entered")
 	
 

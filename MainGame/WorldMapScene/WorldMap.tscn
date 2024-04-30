@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://lt7bsb6f041o"]
+[gd_scene load_steps=10 format=3 uid="uid://lt7bsb6f041o"]
 
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/WorldMap.gd" id="1_vmq77"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/WorldScenePlayer.gd" id="2_2cga4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/Battle001Area2D.gd" id="3_xdj6t"]
 [ext_resource type="Texture2D" uid="uid://cwtv6gi3b56ox" path="res://Sprites/Buttons/WorldSceneButtons/FIght Button!.png" id="4_jrhau"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/FightButton.gd" id="5_igas7"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/sceneDictionary.gd" id="8_78fcl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e8dy0"]
 radius = 7.0
@@ -20,88 +21,6 @@ offset_right = 256.0
 offset_bottom = 192.0
 texture = ExtResource("2_w7hvh")
 metadata/_edit_use_anchors_ = true
-
-[node name="StartingLocation" type="Node2D" parent="TextureRect"]
-
-[node name="Area2D" type="Area2D" parent="TextureRect/StartingLocation"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/StartingLocation/Area2D"]
-position = Vector2(27, 50)
-shape = SubResource("CircleShape2D_e8dy0")
-
-[node name="Battle001" type="Node2D" parent="TextureRect"]
-
-[node name="Battle001Area2D" type="Area2D" parent="TextureRect/Battle001"]
-script = ExtResource("3_xdj6t")
-lvlPath = null
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle001/Battle001Area2D"]
-position = Vector2(143, 51)
-shape = SubResource("CircleShape2D_e8dy0")
-
-[node name="Battle002" type="Node2D" parent="TextureRect"]
-
-[node name="Area2D" type="Area2D" parent="TextureRect/Battle002"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle002/Area2D"]
-position = Vector2(226, 51)
-shape = SubResource("CircleShape2D_e8dy0")
-
-[node name="Battle003" type="Node2D" parent="TextureRect"]
-
-[node name="Area2D" type="Area2D" parent="TextureRect/Battle003"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle003/Area2D"]
-position = Vector2(227, 87)
-shape = SubResource("CircleShape2D_e8dy0")
-
-[node name="Shop001" type="Node2D" parent="TextureRect"]
-
-[node name="Area2D" type="Area2D" parent="TextureRect/Shop001"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Shop001/Area2D"]
-position = Vector2(128, 87)
-shape = SubResource("CircleShape2D_e8dy0")
-
-[node name="Battle004a" type="Node2D" parent="TextureRect"]
-
-[node name="Area2D" type="Area2D" parent="TextureRect/Battle004a"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle004a/Area2D"]
-position = Vector2(57, 71)
-shape = SubResource("CircleShape2D_e8dy0")
-
-[node name="Battle004b" type="Node2D" parent="TextureRect"]
-
-[node name="Area2D" type="Area2D" parent="TextureRect/Battle004b"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle004b/Area2D"]
-position = Vector2(58, 107)
-shape = SubResource("CircleShape2D_e8dy0")
-
-[node name="Battle005" type="Node2D" parent="TextureRect"]
-
-[node name="Area2D" type="Area2D" parent="TextureRect/Battle005"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle005/Area2D"]
-position = Vector2(30, 127)
-shape = SubResource("CircleShape2D_e8dy0")
-
-[node name="Battle006" type="Node2D" parent="TextureRect"]
-
-[node name="Area2D" type="Area2D" parent="TextureRect/Battle006"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle006/Area2D"]
-position = Vector2(169, 135)
-shape = SubResource("CircleShape2D_e8dy0")
-
-[node name="BOSS" type="Node2D" parent="TextureRect"]
-
-[node name="Area2D" type="Area2D" parent="TextureRect/BOSS"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/BOSS/Area2D"]
-position = Vector2(223, 134)
-shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Fight!Button" type="Button" parent="."]
 offset_left = 99.0
@@ -125,5 +44,90 @@ texture = ExtResource("2_n8qjq")
 position = Vector2(14, 43.5)
 scale = Vector2(0.126953, 0.12207)
 polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
+
+[node name="SceneDictionary" type="Node" parent="."]
+script = ExtResource("8_78fcl")
+
+[node name="StartingLocation" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="StartingLocation"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartingLocation/Area2D"]
+position = Vector2(27, 50)
+shape = SubResource("CircleShape2D_e8dy0")
+
+[node name="Battle001" type="Node2D" parent="."]
+
+[node name="Battle001Area2D" type="Area2D" parent="Battle001"]
+script = ExtResource("3_xdj6t")
+lvlPath = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle001/Battle001Area2D"]
+position = Vector2(143, 51)
+shape = SubResource("CircleShape2D_e8dy0")
+
+[node name="Battle002" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Battle002"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle002/Area2D"]
+position = Vector2(226, 51)
+shape = SubResource("CircleShape2D_e8dy0")
+
+[node name="Battle003" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Battle003"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle003/Area2D"]
+position = Vector2(227, 87)
+shape = SubResource("CircleShape2D_e8dy0")
+
+[node name="Shop001" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Shop001"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop001/Area2D"]
+position = Vector2(128, 87)
+shape = SubResource("CircleShape2D_e8dy0")
+
+[node name="Battle004a" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Battle004a"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle004a/Area2D"]
+position = Vector2(57, 71)
+shape = SubResource("CircleShape2D_e8dy0")
+
+[node name="Battle004b" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Battle004b"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle004b/Area2D"]
+position = Vector2(58, 107)
+shape = SubResource("CircleShape2D_e8dy0")
+
+[node name="Battle005" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Battle005"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle005/Area2D"]
+position = Vector2(30, 127)
+shape = SubResource("CircleShape2D_e8dy0")
+
+[node name="Battle006" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Battle006"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle006/Area2D"]
+position = Vector2(169, 135)
+shape = SubResource("CircleShape2D_e8dy0")
+
+[node name="BOSS" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="BOSS"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BOSS/Area2D"]
+position = Vector2(223, 134)
+shape = SubResource("CircleShape2D_e8dy0")
 
 [connection signal="pressed" from="Fight!Button" to="Fight!Button" method="_on_pressed"]
