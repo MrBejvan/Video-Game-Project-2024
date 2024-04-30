@@ -132,6 +132,6 @@ func printTracker():
 		return
 		
 	while current.nextUp != head:
-		print(current.job_name, ":", current.swift)
+		print(current.job_name, ": ", current.swift)
 		current = current.nextUp
 	print(current.job_name, ":", current.swift)

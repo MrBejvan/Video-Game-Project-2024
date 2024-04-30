@@ -5,6 +5,9 @@ extends CharacterBody2D
 var speed = 200  # Adjust as needed
 var movement_vector = Vector2.ZERO
 
+func _player():
+	return true
+
 func _process(_delta):
 	# Reset velocity
 	velocity = Vector2.ZERO

@@ -5,12 +5,10 @@ var playerInArea = false;
 var scenePath
 var parent_node = "res://MainGame/WorldMapScene/WorldMap.tscn"
 
-#res://MainGame/BattleScene/BattleScene001.tscn
-
 func _on_ready():
-	pass
+	var area
+	area.connect("player_entered", self, "_on_player_entered")
 	
-
 
 func _on_fight_pressed():
 	if (parent_node):

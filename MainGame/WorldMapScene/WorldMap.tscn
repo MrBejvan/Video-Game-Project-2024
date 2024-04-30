@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://lt7bsb6f041o"]
+[gd_scene load_steps=9 format=3 uid="uid://lt7bsb6f041o"]
 
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/WorldMap.gd" id="1_vmq77"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/WorldScenePlayer.gd" id="2_2cga4"]
 [ext_resource type="Texture2D" uid="uid://c81sybvv6ri5" path="res://icon.svg" id="2_n8qjq"]
 [ext_resource type="Texture2D" uid="uid://djhfsrsft5awd" path="res://Sprites/WorldMap/Level 1/mergedown_level001_white button spaces.png" id="2_w7hvh"]
+[ext_resource type="Script" path="res://MainGame/WorldMapScene/Battle001Area2D.gd" id="3_xdj6t"]
 [ext_resource type="Texture2D" uid="uid://cwtv6gi3b56ox" path="res://Sprites/Buttons/WorldSceneButtons/FIght Button!.png" id="4_jrhau"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/Fight.gd" id="4_ltepx"]
 
@@ -29,11 +30,12 @@ position = Vector2(27, 50)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Battle001" type="Node2D" parent="TextureRect"]
-unique_name_in_owner = true
 
-[node name="Area2D" type="Area2D" parent="TextureRect/Battle001"]
+[node name="Battle001Area2D" type="Area2D" parent="TextureRect/Battle001"]
+script = ExtResource("3_xdj6t")
+lvlPath = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle001/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Battle001/Battle001Area2D"]
 position = Vector2(143, 51)
 shape = SubResource("CircleShape2D_e8dy0")
 

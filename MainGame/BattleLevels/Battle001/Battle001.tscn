@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cjew5s47tqpad" path="res://Sprites/Player/player.tscn" id="2_fjapp"]
 [ext_resource type="Script" path="res://MainGame/BattleLevels/BattleManager.gd" id="4_nhtfy"]
 [ext_resource type="Script" path="res://mechs/Battle/TurnTracker.gd" id="5_7ed0e"]
-[ext_resource type="Script" path="res://MainGame/BattleLevels/Battle001/FindCharsForBattle.gd" id="6_g4bhf"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/FindCharsForBattle.gd" id="6_g4bhf"]
 
 [node name="Battle001" type="Node2D"]
 
