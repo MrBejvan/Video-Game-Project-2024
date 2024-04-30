@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://djhfsrsft5awd" path="res://Sprites/WorldMap/Level 1/mergedown_level001_white button spaces.png" id="2_w7hvh"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/Battle001Area2D.gd" id="3_xdj6t"]
 [ext_resource type="Texture2D" uid="uid://cwtv6gi3b56ox" path="res://Sprites/Buttons/WorldSceneButtons/FIght Button!.png" id="4_jrhau"]
-[ext_resource type="Script" path="res://MainGame/WorldMapScene/Fight.gd" id="4_ltepx"]
+[ext_resource type="Script" path="res://MainGame/WorldMapScene/FightButton.gd" id="5_igas7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e8dy0"]
 radius = 7.0
@@ -109,7 +109,7 @@ offset_top = 3.0
 offset_right = 157.0
 offset_bottom = 31.0
 icon = ExtResource("4_jrhau")
-script = ExtResource("4_ltepx")
+script = ExtResource("5_igas7")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
