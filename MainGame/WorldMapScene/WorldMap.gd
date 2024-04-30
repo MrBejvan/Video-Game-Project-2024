@@ -9,7 +9,9 @@ var sceneMap = {
 #var sceneKey = ""
 var file
 
-
+func _ready():
+	$TextureRect/Battle001/Battle001Area2D.connect("player_entered", self, "_on_player_entered")
+	
 
 
 
