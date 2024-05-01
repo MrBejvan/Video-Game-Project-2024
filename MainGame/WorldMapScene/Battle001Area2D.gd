@@ -1,19 +1,31 @@
 extends Area2D
 
+#signal to emit
+signal player_entered(scene_path)
+#variable to store scene path from SceneDictionary
+var scenePath
+#entered state; bool
+var entered = false
+
 #define path to Battle001
-@export var lvlPath := "res://MainGame/BattleLevels/Battle001/Battle001.tscn"
+#@export var lvlPath = sceneDir
 
-#signal to emit when player enters the area2D
-signal player_entered(scene_path: String)
+func getDirectory():
+	var sceneDir = get_node("/root/WorldMap/SceneDictionary")
+	print(sceneDir)
+	return sceneDir
 
-func _ready():
-	self.connect("body_entered", self, "_on_body_entered")
-	self.connect("player_entered", self, "_on_player_entered")
-	
 func _on_body_entered(body):
-	if body.has_method("_player"):
-		emit_signal("player_entered", lvlPath)
+	var sceneDir = getDirectory()
+	if sceneDir:
+		var sceneMap = sceneDir.get("sceneMap")
+		if sceneMap:
+			print("sceneMap: ", sceneMap)
+			
+		scenePath = sceneMap.get("Battle001")
+		emit_signal("player_entered", scenePath)
+			
+	#if body.has_method("_player"):
 
-func _on_player_entered(scene_path):
-	print("Player entered: ", scene_path)
-	return scene_path
+func _on_body_exited(body):
+	pass # Replace with function body.

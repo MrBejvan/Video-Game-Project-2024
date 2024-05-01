@@ -1,38 +1,36 @@
 extends Button
 
+#var battleSceneDirectory = $SceneDictionary.sceneMap
 var playerInArea = false;
 
 var scenePath
-var parent_node = "res://MainGame/WorldMapScene/WorldMap.tscn"
 
 func _on_ready():
-	var area : Area2D
-	area.connect("player_entered", self, "_on_player_entered")
-	
+	var rootNode = get_tree().get_current_scene()
+
+
+func loadBattleScene(scenePath: String):
+	if scenePath:
+		print("loading scene: ", scenePath)
+		load(scenePath)
+
+func start_battle():
+	#assign body to the Player node to get Collision data
+	var body = get_node("Player")
+	#get the WorldMap node
+	var rootNode = get_tree().get_current_scene()
+	print("root node: ", rootNode)
+	#use collision function in WorldMap to pull data for dynamic scene transition
+	var nextScenePath = rootNode._on_body_entered(body)
+	if nextScenePath:
+		#load battle scene based on nextScenePath (pulled from WorldMap _on_body_entered which pulls from battleSceneDirectory
+		loadBattleScene(nextScenePath)
+	else:
+		print("Scene: ", scenePath, " cannot load")
+		return
+
 
 func _on_fight_pressed():
-	if (parent_node):
-		print(scenePath)
-		scenePath = parent_node.sceneMap.get("battle001","")
-		
-		print (scenePath)
-		
-	#this block grabs the current scene and then change it to the new scene file only if player collisonshape is in the 2D area of N map location
-	if (playerInArea == true and scenePath != ""):
-		print("player in area and button pressed")
-		
-		get_tree().change_scene_to_file("res://MainGame/BattleScene/BattleScene001.tscn")
+	start_battle()
+	
 
-"""
-func _on_area_2d_body_entered(body):
-		playerInArea = true
-
-
-
-func _on_area_2d_body_exited(body):
-	playerInArea = false
-"""
-
-
-func _on_pressed():
-	pass # Replace with function body.

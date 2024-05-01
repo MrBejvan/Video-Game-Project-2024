@@ -22,7 +22,7 @@ offset_bottom = 192.0
 texture = ExtResource("2_w7hvh")
 metadata/_edit_use_anchors_ = true
 
-[node name="Fight!Button" type="Button" parent="."]
+[node name="FightButton" type="Button" parent="."]
 offset_left = 99.0
 offset_top = 3.0
 offset_right = 157.0
@@ -50,9 +50,9 @@ script = ExtResource("8_78fcl")
 
 [node name="StartingLocation" type="Node2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="StartingLocation"]
+[node name="StartingLocationArea2D" type="Area2D" parent="StartingLocation"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StartingLocation/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartingLocation/StartingLocationArea2D"]
 position = Vector2(27, 50)
 shape = SubResource("CircleShape2D_e8dy0")
 
@@ -60,7 +60,6 @@ shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Battle001Area2D" type="Area2D" parent="Battle001"]
 script = ExtResource("3_xdj6t")
-lvlPath = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Battle001/Battle001Area2D"]
 position = Vector2(143, 51)
@@ -68,17 +67,17 @@ shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Battle002" type="Node2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="Battle002"]
+[node name="Battle002Area2D" type="Area2D" parent="Battle002"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle002/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle002/Battle002Area2D"]
 position = Vector2(226, 51)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [node name="Battle003" type="Node2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="Battle003"]
+[node name="Battle003Area2D" type="Area2D" parent="Battle003"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle003/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle003/Battle003Area2D"]
 position = Vector2(227, 87)
 shape = SubResource("CircleShape2D_e8dy0")
 
@@ -130,4 +129,6 @@ shape = SubResource("CircleShape2D_e8dy0")
 position = Vector2(223, 134)
 shape = SubResource("CircleShape2D_e8dy0")
 
-[connection signal="pressed" from="Fight!Button" to="Fight!Button" method="_on_pressed"]
+[connection signal="pressed" from="FightButton" to="FightButton" method="_on_fight_pressed"]
+[connection signal="body_entered" from="Battle001/Battle001Area2D" to="Battle001/Battle001Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Battle001/Battle001Area2D" to="Battle001/Battle001Area2D" method="_on_body_exited"]
