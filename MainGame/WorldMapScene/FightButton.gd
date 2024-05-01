@@ -34,3 +34,21 @@ func _on_fight_pressed():
 	start_battle()
 	
 
+"""
+
+extends Button
+
+# Function to initiate scene transition
+func start_battle():
+	# Get the reference to WorldMap and call its function to retrieve the desired scene path
+	var world_map = get_tree().get_current_scene()
+	if world_map and world_map.has_method("_on_area2d_player_entered"):
+		# Example trigger: Simulate the "player_entered" signal
+		scene_path = "res://MainGame/BattleLevels/Battle001/Battle001.tscn"  # Example scene path
+		world_map._on_area2d_player_entered(scene_path)
+
+func _on_pressed():
+	start_battle()  # Trigger the battle start when the button is pressed
+
+
+"""
