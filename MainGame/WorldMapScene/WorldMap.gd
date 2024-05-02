@@ -3,22 +3,31 @@ extends Node2D
 var parent_node : Node
 var battleSceneDirectory 
 var battleAreas2D = []
+var scenePath
 
 func _ready():
 	parent_node = get_tree().get_current_scene()
 	print("parent_node: ", parent_node)
+	print("")
 	if parent_node:
-		getBattleAreas(parent_node)
+		var areaArray = getBattleAreas(parent_node)
+		#print("areaArray: ", areaArray)
+		print("")
+		for area in areaArray:
+			print("Area: ", area)
+			print("")
+			area.connect("entered_area", Callable(self, "getPath"))
+			area.connect("exited_area", Callable(self, "_on_player_exited"))
 	else:
 		print(parent_node, " not found")
-	for area in battleAreas2D:
-		#print("Area: ", area)
-		area.connect("entered_area", Callable(self, "_on_player_entered"))
-		area.connect("exited_area", Callable(self, "_on_player_exited"))
-			
+		
 	#get the Battle Scene Path Directory
 	battleSceneDirectory = get_node("SceneDictionary").sceneMap
-	
+	print("battleSceneDirectory: ", battleSceneDirectory)
+	print("")
+
+
+
 func getBattleAreas(node):
 	if node == null:
 		print("Error: node is null")
@@ -29,10 +38,38 @@ func getBattleAreas(node):
 			battleAreas2D.append(child)
 		elif child.get_child_count() > 0:
 			getBattleAreas(child)
-	#return battleAreas2D
+	return battleAreas2D
 	
+func getDirectory():
+	var sceneDir = get_node("/root/WorldMap/SceneDictionary")
+	print(sceneDir)
+	return sceneDir
+
+func getPath(sceneName):
+	print("getPath - sceneName: ", sceneName)
+	print("")
+	
+	if sceneName != "":
+		print("getPath - sceneName: ", sceneName)
+	else:
+		print("getPath - sceneName not valid")
+	if battleSceneDirectory:
+		print("getPath - battleSceneDirectory: ", battleSceneDirectory)
+		scenePath = battleSceneDirectory.get(sceneName)
+		if scenePath:
+			print("getPath - scenePath: ", scenePath)
+			return scenePath
+		else:
+			print("getPath - Invalid scene path: ", scenePath)
+	else:
+		print("getPath - sceneMap not valid")
+
+"""	
 func _on_player_entered(sceneName):
 	print("Player entered area: ", sceneName)
+	
+	var scenePath = getBattleAreas(sceneName)
+	print(scenePath)
 	
 	var fightButton = get_node("FightButton")
 	if fightButton:
@@ -47,3 +84,5 @@ func _on_player_exited(sceneName):
 	if fightButton:
 		fightButton.set("playerInArea", false)
 		fightButton.set("sceneName", sceneName)
+
+"""

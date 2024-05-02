@@ -22,8 +22,8 @@ func getDirectory():
 	print(sceneDir)
 	return sceneDir
 
-func getPath(battleName):
-	sceneName = battleName
+func getPath(sceneName):
+	
 	if sceneName != "":
 		print(sceneName)
 	else:

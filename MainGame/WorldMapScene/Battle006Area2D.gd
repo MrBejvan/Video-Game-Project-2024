@@ -1,6 +1,6 @@
 extends Area2D
 
-var sceneName := "StartingLocation"
+var sceneName := "Battle006"
 
 #signals to emit
 signal entered_area(sceneName)
