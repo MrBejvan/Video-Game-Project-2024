@@ -58,6 +58,14 @@ func getPath(sceneName):
 		if scenePath:
 			print("getPath - scenePath: ", scenePath, " sceneName: ", sceneName)
 			print("")
+			
+			#script to update button to execute scene transition on pressed
+			var fightButton = get_node("FightButton")
+			if fightButton:
+				print("fightButton is valid")
+				fightButton.set("playerInArea", true)
+				fightButton.set("scenePath", scenePath)
+			
 			return scenePath and sceneName
 		else:
 			print("getPath - Invalid scene path: ", scenePath)
@@ -65,6 +73,9 @@ func getPath(sceneName):
 	else:
 		print("getPath - sceneMap not valid")
 		print("")
+		
+	
+	
 
 func _on_player_exited(sceneName):
 	print("Player exited area: ", sceneName)
