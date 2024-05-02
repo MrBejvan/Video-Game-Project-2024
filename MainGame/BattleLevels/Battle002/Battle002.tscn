@@ -1,22 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh0kajd83wpmk"]
+[gd_scene load_steps=9 format=3 uid="uid://bh0kajd83wpmk"]
 
+[ext_resource type="Texture2D" uid="uid://doi3lxjro04g4" path="res://Sprites/WorldMap/Level 1/Battle002/Battle002MergeDown.png" id="1_0vckx"]
 [ext_resource type="PackedScene" uid="uid://u51jqj31xqif" path="res://Sprites/Goblin/GoblinEnemy.tscn" id="1_devql"]
 [ext_resource type="PackedScene" uid="uid://cjew5s47tqpad" path="res://Sprites/Player/player.tscn" id="2_wllme"]
 [ext_resource type="Script" path="res://MainGame/BattleLevels/BattleManager.gd" id="3_3m45x"]
 [ext_resource type="Script" path="res://mechs/Battle/TurnTracker.gd" id="4_rnk7k"]
 [ext_resource type="Script" path="res://MainGame/BattleLevels/FindCharsForBattle.gd" id="5_hxk5p"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/UniversalBattleUISystems/ReturnToMapButton.gd" id="6_t8v3e"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/Battle001/ActionMenuButton.gd" id="7_1p3hr"]
 
 [node name="Battle002" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("1_0vckx")
 
 [node name="GoblinEnemy" parent="." instance=ExtResource("1_devql")]
+position = Vector2(179, 98)
 
 [node name="Player" parent="." instance=ExtResource("2_wllme")]
+position = Vector2(75, 94)
 
 [node name="GoblinEnemy2" parent="." instance=ExtResource("1_devql")]
+position = Vector2(139, 133)
 
 [node name="BattleManager" type="Node" parent="."]
 script = ExtResource("3_3m45x")
@@ -26,3 +33,29 @@ script = ExtResource("4_rnk7k")
 
 [node name="FindCharsForBattle" type="Node" parent="BattleManager"]
 script = ExtResource("5_hxk5p")
+
+[node name="ReturnToMapButton" type="Button" parent="."]
+offset_left = 167.0
+offset_top = 160.0
+offset_right = 256.0
+offset_bottom = 191.0
+text = "WorldMap
+"
+script = ExtResource("6_t8v3e")
+
+[node name="ActionMenuButton" type="MenuButton" parent="."]
+offset_left = 3.0
+offset_top = 160.0
+offset_right = 81.0
+offset_bottom = 191.0
+text = "Actions"
+item_count = 2
+popup/item_0/text = "Attack"
+popup/item_0/checkable = 2
+popup/item_0/id = 0
+popup/item_1/text = "Basic_Skill"
+popup/item_1/checkable = 2
+popup/item_1/id = 1
+script = ExtResource("7_1p3hr")
+
+[connection signal="pressed" from="ReturnToMapButton" to="ReturnToMapButton" method="_on_pressed"]

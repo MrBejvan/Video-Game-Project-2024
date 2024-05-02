@@ -1,3 +1,65 @@
-[gd_scene format=3 uid="uid://0exbq6lo41aa"]
+[gd_scene load_steps=10 format=3 uid="uid://0exbq6lo41aa"]
+
+[ext_resource type="Texture2D" uid="uid://c3pifs3uq0tne" path="res://Sprites/WorldMap/Level 1/Battle003/Battle003MergeDown.png" id="1_iaa0b"]
+[ext_resource type="PackedScene" uid="uid://u51jqj31xqif" path="res://Sprites/Goblin/GoblinEnemy.tscn" id="1_w2t5k"]
+[ext_resource type="PackedScene" uid="uid://cjew5s47tqpad" path="res://Sprites/Player/player.tscn" id="2_v0b0n"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/BattleManager.gd" id="3_07o67"]
+[ext_resource type="Script" path="res://mechs/Battle/TurnTracker.gd" id="4_nrm34"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/FindCharsForBattle.gd" id="5_t8rgw"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/UniversalBattleUISystems/ReturnToMapButton.gd" id="6_pxta5"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/Battle001/ActionMenuButton.gd" id="7_0agdf"]
+[ext_resource type="PackedScene" uid="uid://bu3vb2qgr3xff" path="res://Sprites/Troll/Troll.tscn" id="9_mx0o2"]
 
 [node name="Battle003" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_iaa0b")
+
+[node name="GoblinEnemy" parent="." instance=ExtResource("1_w2t5k")]
+position = Vector2(122, 64)
+
+[node name="Player" parent="." instance=ExtResource("2_v0b0n")]
+position = Vector2(53, 106)
+
+[node name="GoblinEnemy2" parent="." instance=ExtResource("1_w2t5k")]
+position = Vector2(112, 136)
+
+[node name="Troll" parent="." instance=ExtResource("9_mx0o2")]
+position = Vector2(129, 69)
+
+[node name="BattleManager" type="Node" parent="."]
+script = ExtResource("3_07o67")
+
+[node name="TurnTracker" type="Node" parent="BattleManager"]
+script = ExtResource("4_nrm34")
+
+[node name="FindCharsForBattle" type="Node" parent="BattleManager"]
+script = ExtResource("5_t8rgw")
+
+[node name="ReturnToMapButton" type="Button" parent="."]
+offset_left = 167.0
+offset_top = 160.0
+offset_right = 256.0
+offset_bottom = 191.0
+text = "WorldMap
+"
+script = ExtResource("6_pxta5")
+
+[node name="ActionMenuButton" type="MenuButton" parent="."]
+offset_left = 3.0
+offset_top = 160.0
+offset_right = 81.0
+offset_bottom = 191.0
+text = "Actions"
+item_count = 2
+popup/item_0/text = "Attack"
+popup/item_0/checkable = 2
+popup/item_0/id = 0
+popup/item_1/text = "Basic_Skill"
+popup/item_1/checkable = 2
+popup/item_1/id = 1
+script = ExtResource("7_0agdf")
+
+[connection signal="pressed" from="ReturnToMapButton" to="ReturnToMapButton" method="_on_pressed"]

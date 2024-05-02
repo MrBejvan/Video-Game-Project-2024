@@ -16,7 +16,11 @@ func isCharacter():
 #character skills
 @onready var skills = $Job/Skills
 #current health 
-@onready var health : int = 0
+@onready var health : int = stats.max_health
+
+$HealthBar = health
+
+
 	
 #basic attack function for combatant
 func attack(target : Node):

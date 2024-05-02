@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu3vb2qgr3xff"]
+
+[ext_resource type="PackedScene" uid="uid://d3f5eqw6nmo0e" path="res://mechs/Characters/Jobs/job.tscn" id="1_b50vn"]
+[ext_resource type="Script" path="res://mechs/Characters/Battler/Battler.gd" id="1_mk82d"]
+[ext_resource type="Resource" uid="uid://sp5erc8uc7es" path="res://Sprites/Troll/Troll.tres" id="2_cjwiq"]
+[ext_resource type="Resource" uid="uid://n44rjeng8yrm" path="res://mechs/Characters/Jobs/Skills/basicSkill.tres" id="3_aoht6"]
+[ext_resource type="Texture2D" uid="uid://5owhcofih1ad" path="res://Sprites/Troll/TrollType001-Sheet.png" id="4_6eo14"]
+
+[node name="Troll" type="Node2D"]
+script = ExtResource("1_mk82d")
+
+[node name="Job" parent="." instance=ExtResource("1_b50vn")]
+starting_stats = ExtResource("2_cjwiq")
+starting_skills = [ExtResource("3_aoht6")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(33, 33)
+texture = ExtResource("4_6eo14")
+hframes = 15
+
+[node name="HealthBar" type="ProgressBar" parent="Sprite2D"]
+custom_minimum_size = Vector2(50, 20)
+offset_left = -25.0
+offset_top = -36.0
+offset_right = 25.0
+offset_bottom = -9.0
+metadata/_edit_use_anchors_ = true

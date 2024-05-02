@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="StartingStats" load_steps=2 format=3 uid="uid://sp5erc8uc7es"]
+
+[ext_resource type="Script" path="res://mechs/Characters/starting_stats.gd" id="1_yoiou"]
+
+[resource]
+script = ExtResource("1_yoiou")
+job_name = "Troll"
+max_health = 25
+strength = 8
+swift = 2
+defense = 5
+num_skills_avaible = 0
+num_skill_resources = 0
