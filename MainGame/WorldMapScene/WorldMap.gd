@@ -1,64 +1,41 @@
 extends Node2D
 
-var battleSceneDirectory
-var body
+var parent_node = "res://MainGame/WorldMapScene/WorldMap.tscn"
+var battleSceneDirectory 
+var battleAreas2D = []
 
 func _ready():
+	getBattleAreas(parent_node)
+	for area in battleAreas2D:
+		#print("Area: ", area)
+		area.connect("entered_area", Callable(self, "_on_player_entered"))
+		area.connect("exited_area", Callable(self, "_on_player_exited"))
+			
+	#get the Battle Scene Path Directory
 	battleSceneDirectory = get_node("SceneDictionary").sceneMap
-	print(battleSceneDirectory)
-	body = get_node("Player")
-	print("body: ", body)
 	
-	# Connect signals from multiple Area2D nodes
-	var area2d_1 = get_node("Battle001/Battle001Area2D")
-	var area2d_2 = get_node("Battle002/Battle002Area2D")  # Add additional connections as needed
-
-	# Connect the "player_entered" signal to the same handler
-	area2d_1.connect("player_entered", Callable(self, "_on_body_entered"))
-	#area2d_2.connect("player_entered", Callable(self, "_on_body_entered"))
+func getBattleAreas(parent_node):
+	#build array with add Area2D nodes and connect signals to button
+	for child in parent_node.get_children():
+		if child is Area2D:
+			battleAreas2D.append(child)
+		if child.get_child_count() > 0:
+			getBattleAreas(child)
+	#return battleAreas2D
 	
-	# (Repeat for all Area2D nodes from which you want to receive signals)
-
+func _on_player_entered(sceneName):
+	print("Player entered area: ", sceneName)
 	
-	#$Battle001/Battle001Area2D.connect("player_entered", self, "_on_body_entered")
+	var fightButton = get_node("FightButton")
+	if fightButton:
+		fightButton.set("playerInArea", true)
+		fightButton.set("sceneName", sceneName)
+
+
+func _on_player_exited(sceneName):
+	print("Player exited area: ", sceneName)
 	
-func _on_body_entered(body):
-	if body.has_method("_player"):
-		#get the signal from Battle(x) Area2D
-		var trigger
-		if battleSceneDirectory.has(trigger):
-			var nextScenePath = battleSceneDirectory[trigger]
-			return nextScenePath
-
-
-
-
-"""func _on_player_entered(scene_path):
-	# This function will handle signals from any connected Area2D node
-	print("Player entered scene with path:", scene_path)
-
-	# Use the scene path to load the corresponding scene or perform other logic
-	if scene_path in battleSceneDirectory.values():
-		var next_scene = ResourceLoader.load(scene_path)
-		get_tree().change_scene_to(next_scene)"""
-
-		
-"""
-extends Node2D
-
-var battleSceneDirectory  # This will hold the scene paths
-
-func _ready():
-	# Ensure the battleSceneDirectory is populated with scene paths
-	battleSceneDirectory = get_node("SceneDictionary").sceneMap
-
-	# Connect signals from Area2D nodes to handle scene transitions
-	var area2d_1 = get_node("Battle001/Battle001Area2D")
-	area2d_1.connect("player_entered", Callable(self, "_on_area2d_player_entered"))
-
-func _on_area2d_player_entered(scene_path):
-	print("Transitioning to scene:", scene_path)
-	# Transition to the specified scene
-	get_tree().change_scene(scene_path)  # Change to the new scene
-
-		"""
+	var fightButton = get_node("FightButton")
+	if fightButton:
+		fightButton.set("playerInArea", false)
+		fightButton.set("sceneName", sceneName)

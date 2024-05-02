@@ -130,5 +130,5 @@ position = Vector2(223, 134)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [connection signal="pressed" from="FightButton" to="FightButton" method="_on_fight_pressed"]
-[connection signal="body_entered" from="Battle001/Battle001Area2D" to="." method="_on_player_entered"]
-[connection signal="body_exited" from="Battle001/Battle001Area2D" to="." method="_on_player_exited"]
+[connection signal="body_entered" from="Battle001/Battle001Area2D" to="FightButton" method="_on_player_entered"]
+[connection signal="body_exited" from="Battle001/Battle001Area2D" to="FightButton" method="_on_player_exited"]
