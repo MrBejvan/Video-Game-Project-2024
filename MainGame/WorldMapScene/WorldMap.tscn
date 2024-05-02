@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://lt7bsb6f041o"]
+[gd_scene load_steps=11 format=3 uid="uid://lt7bsb6f041o"]
 
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/WorldMap.gd" id="1_vmq77"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/WorldScenePlayer.gd" id="2_2cga4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cwtv6gi3b56ox" path="res://Sprites/Buttons/WorldSceneButtons/FIght Button!.png" id="4_jrhau"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/FightButton.gd" id="5_igas7"]
 [ext_resource type="Script" path="res://MainGame/BattleLevels/sceneDictionary.gd" id="8_78fcl"]
+[ext_resource type="Script" path="res://MainGame/WorldMapScene/StartingLocationArea2D.gd" id="8_u7t25"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e8dy0"]
 radius = 7.0
@@ -51,6 +52,7 @@ script = ExtResource("8_78fcl")
 [node name="StartingLocation" type="Node2D" parent="."]
 
 [node name="StartingLocationArea2D" type="Area2D" parent="StartingLocation"]
+script = ExtResource("8_u7t25")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartingLocation/StartingLocationArea2D"]
 position = Vector2(27, 50)
@@ -130,5 +132,7 @@ position = Vector2(223, 134)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [connection signal="pressed" from="FightButton" to="FightButton" method="_on_fight_pressed"]
+[connection signal="body_entered" from="StartingLocation/StartingLocationArea2D" to="." method="_on_player_entered"]
+[connection signal="body_exited" from="StartingLocation/StartingLocationArea2D" to="." method="_on_player_exited"]
 [connection signal="body_entered" from="Battle001/Battle001Area2D" to="." method="_on_player_entered"]
 [connection signal="body_exited" from="Battle001/Battle001Area2D" to="." method="_on_player_exited"]
