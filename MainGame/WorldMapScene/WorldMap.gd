@@ -1,5 +1,7 @@
 extends Node2D
 
+signal pathToBattle
+
 var parent_node : Node
 var battleSceneDirectory 
 var battleAreas2D = []
@@ -14,8 +16,8 @@ func _ready():
 		#print("areaArray: ", areaArray)
 		print("")
 		for area in areaArray:
-			print("Area: ", area)
-			print("")
+			#print("Area: ", area)
+			#print("")
 			area.connect("entered_area", Callable(self, "getPath"))
 			area.connect("exited_area", Callable(self, "_on_player_exited"))
 	else:
@@ -23,7 +25,7 @@ func _ready():
 		
 	#get the Battle Scene Path Directory
 	battleSceneDirectory = get_node("SceneDictionary").sceneMap
-	print("battleSceneDirectory: ", battleSceneDirectory)
+	#print("battleSceneDirectory: ", battleSceneDirectory)
 	print("")
 
 
@@ -46,43 +48,37 @@ func getDirectory():
 	return sceneDir
 
 func getPath(sceneName):
-	print("getPath - sceneName: ", sceneName)
-	print("")
-	
 	if sceneName != "":
 		print("getPath - sceneName: ", sceneName)
 	else:
 		print("getPath - sceneName not valid")
 	if battleSceneDirectory:
-		print("getPath - battleSceneDirectory: ", battleSceneDirectory)
+		#print("getPath - battleSceneDirectory: ", battleSceneDirectory)
 		scenePath = battleSceneDirectory.get(sceneName)
 		if scenePath:
-			print("getPath - scenePath: ", scenePath)
-			return scenePath
+			print("getPath - scenePath: ", scenePath, " sceneName: ", sceneName)
+			print("")
+			return scenePath and sceneName
 		else:
 			print("getPath - Invalid scene path: ", scenePath)
+			print("")
 	else:
 		print("getPath - sceneMap not valid")
-
-"""	
-func _on_player_entered(sceneName):
-	print("Player entered area: ", sceneName)
-	
-	var scenePath = getBattleAreas(sceneName)
-	print(scenePath)
-	
-	var fightButton = get_node("FightButton")
-	if fightButton:
-		fightButton.set("playerInArea", true)
-		fightButton.set("sceneName", sceneName)
-
+		print("")
 
 func _on_player_exited(sceneName):
 	print("Player exited area: ", sceneName)
-	
+	print("")
+	sceneName = ""
+	if sceneName == "":
+		print("sceneName reset")
+		print("")
 	var fightButton = get_node("FightButton")
 	if fightButton:
 		fightButton.set("playerInArea", false)
 		fightButton.set("sceneName", sceneName)
 
-"""
+
+
+func player_entered_area(body):
+	pass # Replace with function body.

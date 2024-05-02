@@ -148,4 +148,11 @@ position = Vector2(223, 134)
 shape = SubResource("CircleShape2D_e8dy0")
 
 [connection signal="pressed" from="FightButton" to="FightButton" method="_on_fight_pressed"]
+[connection signal="body_entered" from="StartingLocation/StartingLocationArea2D" to="StartingLocation/StartingLocationArea2D" method="player_entered_area"]
+[connection signal="body_exited" from="StartingLocation/StartingLocationArea2D" to="StartingLocation/StartingLocationArea2D" method="player_exited_area"]
 [connection signal="body_entered" from="Battle001/Battle001Area2D" to="Battle001/Battle001Area2D" method="player_entered_area"]
+[connection signal="body_exited" from="Battle001/Battle001Area2D" to="Battle001/Battle001Area2D" method="player_exited_area"]
+[connection signal="body_entered" from="Battle002/Battle002Area2D" to="Battle002/Battle002Area2D" method="player_entered_area"]
+[connection signal="body_exited" from="Battle002/Battle002Area2D" to="Battle002/Battle002Area2D" method="player_exited_area"]
+[connection signal="body_entered" from="Battle003/Battle003Area2D" to="Battle003/Battle003Area2D" method="player_entered_area"]
+[connection signal="body_exited" from="Battle003/Battle003Area2D" to="Battle003/Battle003Area2D" method="player_exited_area"]

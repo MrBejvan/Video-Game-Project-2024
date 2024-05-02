@@ -7,3 +7,4 @@ var sceneMap = {
 	"Battle002": "res://MainGame/BattleLevels/Battle002/Battle002.tscn",
 	"Battle003": "res://MainGame/BattleLevels/Battle003/Battle003.tscn"
 }
+#add scenes and keys from the shop onwards

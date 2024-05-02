@@ -17,8 +17,6 @@ func player_entered_area(body):
 
 func player_exited_area(body):
 	if body.name == "Player":
-		print("Player exited area: ", sceneName)
-		sceneName = ""
 		emit_signal("exited_area", sceneName)
 	else:
 		print("not Player")
