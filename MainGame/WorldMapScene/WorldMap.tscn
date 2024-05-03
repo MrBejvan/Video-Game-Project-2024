@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/WorldMap.gd" id="1_vmq77"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/WorldScenePlayer.gd" id="2_2cga4"]
-[ext_resource type="Texture2D" uid="uid://c81sybvv6ri5" path="res://icon.svg" id="2_n8qjq"]
 [ext_resource type="Texture2D" uid="uid://djhfsrsft5awd" path="res://Sprites/WorldMap/Level 1/mergedown_level001_white button spaces.png" id="2_w7hvh"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/Battle001Area2D.gd" id="3_xdj6t"]
 [ext_resource type="Texture2D" uid="uid://cwtv6gi3b56ox" path="res://Sprites/Buttons/WorldSceneButtons/FIght Button!.png" id="4_jrhau"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/FightButton.gd" id="5_igas7"]
+[ext_resource type="Texture2D" uid="uid://btojaqsngt5at" path="res://Sprites/WorldMap/PlayerIcon/PlayerIcon.png" id="6_i0muq"]
 [ext_resource type="Script" path="res://MainGame/BattleLevels/sceneDictionary.gd" id="8_78fcl"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/StartingLocationArea2D.gd" id="8_u7t25"]
 [ext_resource type="Script" path="res://MainGame/WorldMapScene/Battle002Area2D.gd" id="10_v3iac"]
@@ -45,9 +45,9 @@ position = Vector2(13, 7)
 script = ExtResource("2_2cga4")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player"]
-position = Vector2(13.85, 43.225)
-scale = Vector2(0.127344, 0.121485)
-texture = ExtResource("2_n8qjq")
+position = Vector2(14, 43.5)
+scale = Vector2(1, 0.9375)
+texture = ExtResource("6_i0muq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
 position = Vector2(14, 43.5)

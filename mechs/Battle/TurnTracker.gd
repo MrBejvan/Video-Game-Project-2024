@@ -2,8 +2,6 @@ extends Node
 
 class_name TurnTracker
 
-#var path = "res://mechs/Battle/TurnTracker.gd"
-
 var head : CharacterNode = null
 var current : CharacterNode = null
 var intitialized = false
@@ -52,9 +50,7 @@ func insert(job_name, health, swift):
 	#sanity check
 	#print("first up is ", current.job_name, " with ", current.nextUp.job_name, " up next")
 	return head
-	
 
-#output suggests that sorting is not correct - work through and verify/test
 func sortTurnTracker():
 	if head == null:
 		print("TurnTracker is empty; Cannot sort")
@@ -93,7 +89,8 @@ func sortHelper(nodes):
 		for i in range(n - 1):
 			if nodes[i].swift < nodes[i + 1].swift:
 				var temp = nodes[i]
-				print("node[i]: ", nodes[i].job_name)
+				#sanity check
+				#print("node[i]: ", nodes[i].job_name)
 				nodes[i] = nodes[i + 1]
 				nodes[i + 1] = temp
 				swapped = true
@@ -130,7 +127,7 @@ func removeCharacter(job_name):
 			current = null
 			print("Only one node in the Tracker")
 			return
-			
+		
 		var temp = head
 		head = head.nextUp
 		var lastUp = head

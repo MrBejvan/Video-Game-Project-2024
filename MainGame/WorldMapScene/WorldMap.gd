@@ -28,8 +28,6 @@ func _ready():
 	#print("battleSceneDirectory: ", battleSceneDirectory)
 	print("")
 
-
-
 func getBattleAreas(node):
 	if node == null:
 		print("Error: node is null")
@@ -74,8 +72,6 @@ func getPath(sceneName):
 		print("getPath - sceneMap not valid")
 		print("")
 		
-	
-	
 
 func _on_player_exited(sceneName):
 	print("Player exited area: ", sceneName)
@@ -89,7 +85,3 @@ func _on_player_exited(sceneName):
 		fightButton.set("playerInArea", false)
 		fightButton.set("sceneName", sceneName)
 
-
-
-func player_entered_area(body):
-	pass # Replace with function body.

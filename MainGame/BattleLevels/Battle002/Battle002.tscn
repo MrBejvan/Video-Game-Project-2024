@@ -30,10 +30,9 @@ position = Vector2(139, 133)
 script = ExtResource("3_3m45x")
 
 [node name="KillButton" type="Button" parent="BattleManager"]
-offset_left = 80.0
-offset_top = 124.0
-offset_right = 170.0
-offset_bottom = 155.0
+offset_left = 85.0
+offset_right = 175.0
+offset_bottom = 31.0
 text = "Kill Button"
 script = ExtResource("9_818mj")
 

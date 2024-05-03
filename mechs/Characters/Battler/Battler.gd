@@ -5,11 +5,9 @@ class_name Battler
 
 const DEFAULT_CHANCE = 0.75
 
-
 #add method for identifying as 'character' 
 func isCharacter():
 	return true
-
 
 #reference to characterstats (skeleton for stats and attributes)
 @onready var stats : CharacterStats = $Job/Stats
@@ -19,7 +17,6 @@ func isCharacter():
 @onready var health : int = stats.max_health
 
 #$HealthBar = health
-
 
 	
 #basic attack function for combatant
