@@ -18,7 +18,7 @@ func isCharacter():
 #current health 
 @onready var health : int = stats.max_health
 
-$HealthBar = health
+#$HealthBar = health
 
 
 	

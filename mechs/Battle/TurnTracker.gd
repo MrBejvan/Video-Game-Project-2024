@@ -17,14 +17,6 @@ class CharacterNode:
 func _init():
 	intitialized = true
 	
-	"""
-	var stats = get_node("Job/Stats")
-	var job_name = stats.job_name
-	var health = stats.health
-	var swift = stats.swift
-	"""
-
-	
 func insert(job_name, health, swift):
 	#sanity check
 	#print(job_name, " ", health, " ", swift)
@@ -124,6 +116,39 @@ func countCharsInTracker():
 				cursor = cursor.nextUp
 	print("count: ", count)
 	return count
+	
+	
+func removeCharacter(job_name):
+	if head == null:
+		print("Tracker is empty, cannot remove character")
+		return
+		
+	if head.job_name == job_name:
+		if head.nextUp.job_name == job_name:
+			#Only one node is present in the Tracker
+			head = null
+			current = null
+			print("Only one node in the Tracker")
+			return
+			
+		var temp = head
+		head = head.nextUp
+		var lastUp = head
+		while lastUp.nextUp != temp:
+			lastUp = lastUp.nextUp
+		lastUp.nextUp = head
+		if current == temp:
+			current = head
+			print("removeCharacter - current: ", current)
+		return
+		
+	var cursor = head
+	while cursor.nextUp != head:
+		if cursor.nextUp.job_name == job_name:
+			cursor.nextUp = cursor.nextUp.nextUp
+			return
+		cursor = cursor.nextUp
+	
 
 func printTracker():	
 	#current = head
@@ -132,6 +157,6 @@ func printTracker():
 		return
 		
 	while current.nextUp != head:
-		print(current.job_name, ": ", current.swift)
+		print(current.job_name, ": ", current.swift, " health: ", current.health)
 		current = current.nextUp
-	print(current.job_name, ":", current.swift)
+	print(current.job_name, ":", current.swift, " health: ", current.health)

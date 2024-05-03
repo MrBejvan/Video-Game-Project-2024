@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://0exbq6lo41aa"]
+[gd_scene load_steps=11 format=3 uid="uid://0exbq6lo41aa"]
 
 [ext_resource type="Texture2D" uid="uid://c3pifs3uq0tne" path="res://Sprites/WorldMap/Level 1/Battle003/Battle003MergeDown.png" id="1_iaa0b"]
 [ext_resource type="PackedScene" uid="uid://u51jqj31xqif" path="res://Sprites/Goblin/GoblinEnemy.tscn" id="1_w2t5k"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://MainGame/BattleLevels/UniversalBattleUISystems/ReturnToMapButton.gd" id="6_pxta5"]
 [ext_resource type="Script" path="res://MainGame/BattleLevels/Battle001/ActionMenuButton.gd" id="7_0agdf"]
 [ext_resource type="PackedScene" uid="uid://bu3vb2qgr3xff" path="res://Sprites/Troll/Troll.tscn" id="9_mx0o2"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/UniversalBattleUISystems/KillButton.gd" id="10_oos4m"]
 
 [node name="Battle003" type="Node2D"]
 
@@ -62,4 +63,14 @@ popup/item_1/checkable = 2
 popup/item_1/id = 1
 script = ExtResource("7_0agdf")
 
+[node name="KillButton" type="Button" parent="."]
+offset_left = 80.0
+offset_top = 124.0
+offset_right = 170.0
+offset_bottom = 155.0
+text = "Kill Button"
+script = ExtResource("10_oos4m")
+
 [connection signal="pressed" from="ReturnToMapButton" to="ReturnToMapButton" method="_on_pressed"]
+[connection signal="killButton" from="KillButton" to="BattleManager" method="_on_kill_button"]
+[connection signal="pressed" from="KillButton" to="KillButton" method="_on_pressed"]
