@@ -3,6 +3,7 @@
 
 Data Structure Implemented: Sorted Circular Linked List
 Additional Structure Implemented: Map
+Presentation: Free Form Video Presentation with Code Tracing
 
 Project Overview: This project began as a personal project a few weeks before the project proposal was due because I wanted a relatable but challenging programming problem to work on that could be used as the base for my Data Structures project. It was quite challenging to learn a new language just for this project, but the format of a game was easily understandable to me and helped facilitate the learning process. I created all of the art and scripting for the current implementation of this project with the help and inspiration from several YouTube channels that I will list below. Additionally, Reddit forums for GODOT, as well as StackOverflow, were incredibly helpful at my most challenging points. Personally, the biggest challenge for this project was to build it in such a way that code could be re-used easily and specific data could be accessed through resource files instead of directly built-in scripts, which would have taken so much longer to create. Getting all of the files to correctly communicate with each other was an amazing challenge and I spent much of my time just trying to figure that out. But once I had it set up correctly, I was able to implement my turnTracker and sceneNavigation features very easily and I have a stable skeleton for scripting that I can copy-paste to other parts of my game.
 
@@ -14,4 +15,6 @@ The additional data structure that was implemented was a map/associative array. 
 
 YouTube channels: GDQuest, DevWorm, CoCoCode, 16BitDev, GWizz, Queble, GameDevKnight
 
-Test Video Link: https://drive.google.com/file/d/1STmYOsE_yz-bmshiYkKfGw4b2O-ytK5U/view?usp=drive_link
+Video Presentation Link: https://drive.google.com/uc?id=1wX8NU1jartRAc_Qtv-YZKlv2kIpPdOyO&export=download
+
+((Test Video Link: https://drive.google.com/file/d/1STmYOsE_yz-bmshiYkKfGw4b2O-ytK5U/view?usp=drive_link))
