@@ -124,10 +124,11 @@ func removeCharacter(job_name):
 		return
 		
 	if head.job_name == job_name:
-		if head.nextUp == job_name:
+		if head.nextUp.job_name == job_name:
 			#Only one node is present in the Tracker
 			head = null
 			current = null
+			print("Only one node in the Tracker")
 			return
 			
 		var temp = head
@@ -138,6 +139,7 @@ func removeCharacter(job_name):
 		lastUp.nextUp = head
 		if current == temp:
 			current = head
+			print("removeCharacter - current: ", current)
 		return
 		
 	var cursor = head

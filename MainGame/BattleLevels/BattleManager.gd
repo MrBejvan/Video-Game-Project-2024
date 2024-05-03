@@ -48,6 +48,8 @@ func sortTracker():
 
 func _on_kill_button(killName):
 	print("")
-	print("removing character")
+	print("removing character: ", killName)
 	turnTracker.removeCharacter(killName)
+	print("")
+	turnTracker.sortTurnTracker()
 	turnTracker.printTracker()
