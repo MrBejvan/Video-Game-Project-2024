@@ -15,6 +15,6 @@ The additional data structure that was implemented was a map/associative array. 
 
 YouTube channels: GDQuest, DevWorm, CoCoCode, 16BitDev, GWizz, Queble, GameDevKnight
 
-Video Presentation Link: https://drive.google.com/uc?id=1wX8NU1jartRAc_Qtv-YZKlv2kIpPdOyO&export=download
+Video Presentation Link: https://drive.google.com/file/d/1wX8NU1jartRAc_Qtv-YZKlv2kIpPdOyO/view?usp=drive_link
 
 ((Test Video Link: https://drive.google.com/file/d/1STmYOsE_yz-bmshiYkKfGw4b2O-ytK5U/view?usp=drive_link))
