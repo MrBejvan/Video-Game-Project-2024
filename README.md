@@ -3,7 +3,7 @@
 
 Data Structure Implemented: Sorted Circular Linked List
 Additional Structure Implemented: Map
-Presentation: Free Form Video Presentation with Code Tracing
+Presentation: Short Form Focused Presentation, (extra) Free Form Video Presentation with Thorough Code Tracing
 
 Quick note on video presentation and a thank you - This video is very in depth and I apologize for the long format. I have edited as best as I could, but there is just a ton of content that I wanted to cover for this project. If desired or necessary I could re-record this in a more condensed format. Please reach out via email if this is requested, and thank you for the opportunity to learn in your classroom.
 
