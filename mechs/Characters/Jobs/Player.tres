@@ -6,6 +6,7 @@
 script = ExtResource("1_fpiyp")
 job_name = "Player"
 max_health = 15
+health = 15
 strength = 4
 swift = 5
 defense = 3

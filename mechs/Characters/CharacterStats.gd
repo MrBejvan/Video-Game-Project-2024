@@ -17,7 +17,7 @@ var num_skill_resources : int
 func initialize(stats : StartingStats):
 	job_name = stats.job_name
 	max_health = stats.max_health
-	health = stats.max_health
+	health = stats.health
 	strength = stats.strength
 	swift = stats.swift
 	defense = stats.defense

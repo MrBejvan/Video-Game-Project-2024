@@ -53,3 +53,8 @@ func _on_kill_button(killName):
 	print("")
 	turnTracker.sortTurnTracker()
 	turnTracker.printTracker()
+	
+	
+	
+
+#add play_turn func here??

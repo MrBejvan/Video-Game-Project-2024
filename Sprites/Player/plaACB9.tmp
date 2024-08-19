@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjew5s47tqpad"]
+[gd_scene load_steps=7 format=3 uid="uid://cjew5s47tqpad"]
 
 [ext_resource type="Script" path="res://mechs/Characters/Battler/Battler.gd" id="1_1hfjx"]
 [ext_resource type="PackedScene" uid="uid://d3f5eqw6nmo0e" path="res://mechs/Characters/Jobs/job.tscn" id="1_t1bb4"]
@@ -6,12 +6,6 @@
 [ext_resource type="Resource" uid="uid://bgvakpdckr3nu" path="res://mechs/Characters/Jobs/Player.tres" id="2_7fhij"]
 [ext_resource type="Resource" uid="uid://n44rjeng8yrm" path="res://mechs/Characters/Jobs/Skills/basicSkill.tres" id="4_67pbp"]
 [ext_resource type="Script" path="res://mechs/Battle/Health/HealthBar.gd" id="6_4cn4k"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4o1p4"]
-bg_color = Color(0.756863, 0.172549, 0.223529, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6huvr"]
-bg_color = Color(0.266667, 0.635294, 0.341176, 1)
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_1hfjx")
@@ -30,7 +24,5 @@ offset_left = -25.0
 offset_top = -36.0
 offset_right = 25.0
 offset_bottom = -9.0
-theme_override_styles/background = SubResource("StyleBoxFlat_4o1p4")
-theme_override_styles/fill = SubResource("StyleBoxFlat_6huvr")
 script = ExtResource("6_4cn4k")
 metadata/_edit_use_anchors_ = true

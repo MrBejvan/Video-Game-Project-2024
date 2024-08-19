@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://u51jqj31xqif"]
+[gd_scene load_steps=8 format=3 uid="uid://u51jqj31xqif"]
 
 [ext_resource type="Script" path="res://mechs/Characters/Battler/Battler.gd" id="2_heywj"]
 [ext_resource type="PackedScene" uid="uid://d3f5eqw6nmo0e" path="res://mechs/Characters/Jobs/job.tscn" id="3_y5w0w"]
 [ext_resource type="Resource" uid="uid://cd3onurn6vrbe" path="res://mechs/Characters/Jobs/Goblin.tres" id="4_06mga"]
 [ext_resource type="Texture2D" uid="uid://b0ox0ewl2tx8q" path="res://Sprites/Goblin/GoblinType001-Sheet.png" id="5_ecbbm"]
+[ext_resource type="Script" path="res://mechs/Battle/Health/HealthBar.gd" id="5_vklyi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7li2"]
+bg_color = Color(0.756863, 0.172549, 0.223529, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lu05"]
+bg_color = Color(0.266667, 0.635294, 0.341176, 1)
 
 [node name="GoblinEnemy" type="Node2D"]
 script = ExtResource("2_heywj")
@@ -17,9 +24,12 @@ starting_stats = ExtResource("4_06mga")
 texture = ExtResource("5_ecbbm")
 hframes = 15
 
-[node name="HealthBar" type="ProgressBar" parent="Sprite2D"]
+[node name="HealthBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(50, 20)
-offset_left = -25.0
-offset_top = -37.0
-offset_right = 25.0
-offset_bottom = -10.0
+offset_left = -50.0
+offset_top = -73.0
+offset_bottom = -46.0
+theme_override_styles/background = SubResource("StyleBoxFlat_u7li2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0lu05")
+script = ExtResource("5_vklyi")
+metadata/_edit_use_anchors_ = true

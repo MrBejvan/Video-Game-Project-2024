@@ -13,10 +13,16 @@ func isCharacter():
 @onready var stats : CharacterStats = $Job/Stats
 #character skills
 @onready var skills = $Job/Skills
-#current health 
-@onready var health : int = stats.max_health
+#max health 
+@onready var health_max : int = stats.max_health
+#current health
+@onready var health_curr : int = stats.health
+#min health
+@onready var health_min : int = 0
 
-#$HealthBar = health
+
+func _ready():
+	var foo = null
 
 	
 #basic attack function for combatant
@@ -28,15 +34,17 @@ func attack(target : Node):
 	
 #basic take damage function for combatant
 func take_damage(hit):
-	health -= hit.damage
-	health = max(0, health)
-	emit_signal("health_changed", health)
-	if (health <= 0):
+	health_curr -= hit.damage
+	health_curr = max(0, health_max)
+	emit_signal("health_changed", health_curr)
+	if (health_curr == health_min):
 		die()
 		
 #basic death function - end battle, play "defeated", return to point right before player pressed 'start battle'
 func die():
-	pass
+	if health_curr == 0:
+		print("You are dead! Oh no!")
+		pass
 	
 #can add modifier funcs here
 		

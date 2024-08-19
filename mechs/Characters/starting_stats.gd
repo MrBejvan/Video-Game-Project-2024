@@ -4,6 +4,7 @@ class_name StartingStats
 
 @export var job_name : String
 @export var max_health : int
+@export var health: int
 @export var strength : int
 @export var swift : int
 @export var defense : int

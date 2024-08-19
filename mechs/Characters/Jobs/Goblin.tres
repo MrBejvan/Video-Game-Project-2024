@@ -6,6 +6,7 @@
 script = ExtResource("1_8ecl1")
 job_name = "Goblin"
 max_health = 5
+health = 0
 strength = 2
 swift = 3
 defense = 2
