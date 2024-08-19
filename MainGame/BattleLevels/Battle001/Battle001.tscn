@@ -27,6 +27,7 @@ position = Vector2(172, 104)
 script = ExtResource("4_nhtfy")
 
 [node name="KillButton" type="Button" parent="BattleManager"]
+visible = false
 offset_left = 82.0
 offset_top = 1.0
 offset_right = 172.0
@@ -36,6 +37,8 @@ script = ExtResource("9_whor7")
 
 [node name="TurnTracker" type="Node" parent="BattleManager"]
 script = ExtResource("5_7ed0e")
+
+[node name="Visualizer" type="Node2D" parent="BattleManager/TurnTracker"]
 
 [node name="FindCharsForBattle" type="Node" parent="BattleManager"]
 script = ExtResource("6_g4bhf")

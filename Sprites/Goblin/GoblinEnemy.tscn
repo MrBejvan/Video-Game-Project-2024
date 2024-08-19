@@ -26,9 +26,10 @@ hframes = 15
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(50, 20)
-offset_left = -50.0
-offset_top = -73.0
-offset_bottom = -46.0
+offset_left = -25.0
+offset_top = -36.0
+offset_right = 25.0
+offset_bottom = -9.0
 theme_override_styles/background = SubResource("StyleBoxFlat_u7li2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_0lu05")
 script = ExtResource("5_vklyi")
