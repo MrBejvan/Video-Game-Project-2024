@@ -156,4 +156,4 @@ func printTracker():
 	while current.nextUp != head:
 		print(current.job_name, ": ", current.swift, " health: ", current.health)
 		current = current.nextUp
-	print(current.job_name, ":", current.swift, " health: ", current.health)
+	print(current.job_name, ": ", current.swift, " health: ", current.health)

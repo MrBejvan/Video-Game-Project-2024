@@ -17,6 +17,8 @@ func _ready():
 		
 	print("printing turn order: ")
 	printTurnOrder()
+	
+	#play_turn()
 
 func addBattlerToTracker():
 	var charNodes = $FindCharsForBattle.findCharacterNodes() as Array
@@ -45,7 +47,6 @@ func countTracker():
 func sortTracker():
 	turnTracker.sortTurnTracker()
 
-
 func _on_kill_button(killName):
 	print("")
 	print("removing character: ", killName)
@@ -53,8 +54,22 @@ func _on_kill_button(killName):
 	print("")
 	turnTracker.sortTurnTracker()
 	turnTracker.printTracker()
-	
-	
-	
 
-#add play_turn func here??
+func play_turn():
+	var activeBattler = turnTracker.head
+	while activeBattler.nextUp != null:
+		var playNowName = activeBattler.job_name
+		print(playNowName, "'s turn now...")
+		if activeBattler.job_name == "Player":
+			pass
+			
+		else:
+			pass
+			
+		#turn functionality open/occur
+		
+	battle_end()	
+	
+	
+func battle_end():
+	pass
