@@ -1,4 +1,4 @@
-extends MenuButton
+extends Button
 
 var action_menu_container : VBoxContainer
 var attack_button : Button
@@ -12,6 +12,8 @@ func _ready():
 	#attack button
 	attack_button = Button.new()
 	attack_button.text = "Attack"
+	attack_button.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	attack_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	attack_button.connect("pressed", Callable(self, "_on_attack_pressed"))
 	action_menu_container.add_child(attack_button)
 
