@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b1ig8vy0y0dd3"]
+[gd_scene load_steps=17 format=3 uid="uid://b1ig8vy0y0dd3"]
 
 [ext_resource type="Texture2D" uid="uid://cdb5q5y62gkkq" path="res://Sprites/WorldMap/Level 1/Battle001/MergeDownBattle001Field.png" id="1_om35p"]
 [ext_resource type="PackedScene" uid="uid://u51jqj31xqif" path="res://Sprites/Goblin/GoblinEnemy.tscn" id="2_epj4r"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" path="res://MainGame/BattleLevels/UniversalBattleUISystems/KillButton.gd" id="9_whor7"]
 [ext_resource type="Script" path="res://MainGame/BattleLevels/Battle001/Target Selection.gd" id="13_ddv71"]
 [ext_resource type="Script" path="res://MainGame/BattleLevels/Battle001/FindCharPositions.gd" id="14_flork"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/Battle001/Node2D.gd" id="15_wflve"]
+[ext_resource type="Texture2D" uid="uid://c81sybvv6ri5" path="res://icon.svg" id="16_1v6fx"]
 
 [node name="Battle001" type="Node2D"]
 
@@ -125,6 +127,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("14_flork")
+
+[node name="selectionArrow" type="Node2D" parent="Interface/Target Selection"]
+script = ExtResource("15_wflve")
+
+[node name="selectionArrowSprite" type="Sprite2D" parent="Interface/Target Selection/selectionArrow"]
+position = Vector2(129, 81)
+scale = Vector2(0.117188, 0.101563)
+texture = ExtResource("16_1v6fx")
 
 [connection signal="pressed" from="Interface/ReturnToMapButton" to="Interface/ReturnToMapButton" method="_on_pressed"]
 [connection signal="killButton" from="Interface/KillButton" to="BattleManager" method="_on_kill_button"]
