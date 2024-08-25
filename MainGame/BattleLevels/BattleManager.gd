@@ -57,14 +57,21 @@ func _on_kill_button(killName):
 
 func play_turn():
 	var activeBattler = turnTracker.head
-	while activeBattler.nextUp != null:
+	while activeBattler.nextUp:
 		var playNowName = activeBattler.job_name
 		print(playNowName, "'s turn now...")
 		if activeBattler.job_name == "Player":
 			pass
+			#activate UI/action menu button
 			
 		else:
 			pass
+			#activate attack from enemy; auto target player
+			
+		#this should cycle the turn forward
+		activeBattler = activeBattler.nextUp
+		
+		
 			
 		#turn functionality open/occur
 		

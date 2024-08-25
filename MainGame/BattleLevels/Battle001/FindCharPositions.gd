@@ -32,11 +32,14 @@ func addCharNodesDict():
 	for character in CharNodes:
 		var bps = character.get_position()
 		
-		if character.has_node("Job/Stats"):
+		#optional script for node name instead of character node
+		'''if character.has_node("Job/Stats"):
 			var stats = character.get_node("Job/Stats")
 			var character_name = stats.job_name
 			
-			bpsDict[character_name] = bps
-		
+			bpsDict[character_name] = bps'''
+			
+			
+		bpsDict[character] = bps	
 	print(bpsDict)
 	return bpsDict

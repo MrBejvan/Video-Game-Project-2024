@@ -12,6 +12,9 @@ func _process(delta):
 		self.visible = true
 		if battler_current_health == battler_min_health:
 			self.visible = false
+			
+			#Emit signal to trigger death and removal from queue and battle
+			
 	else:
 		self.visible = false
 		

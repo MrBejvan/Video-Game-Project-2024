@@ -1,5 +1,7 @@
 extends Button
 
+signal targetselect
+
 var action_menu_container : VBoxContainer
 var attack_button : Button
 var skill_button : Button
@@ -15,6 +17,7 @@ func _ready():
 	attack_button.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	attack_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	attack_button.connect("pressed", Callable(self, "_on_attack_pressed"))
+	
 	action_menu_container.add_child(attack_button)
 
 	#skill button
@@ -29,6 +32,9 @@ func _ready():
 func on_action_menu_pressed():
 	action_menu_container.visible = !action_menu_container.visible
 
+func _on_attack_pressed():
+	emit_signal("targetselect")
+	
 '''
 # Called when the node enters the scene tree for the first time.
 func _ready():

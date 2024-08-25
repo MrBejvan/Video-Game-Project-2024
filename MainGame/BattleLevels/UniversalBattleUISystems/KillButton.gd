@@ -7,25 +7,6 @@ var targetNode
 
 func _ready():
 	pass
-"""
-	var rootNode = get_tree().get_current_scene()
-	var targetName = "FindCharsForBattle"
-	
-	var targetNode = findNodeRecursively(rootNode, targetName)
-	if targetNode:
-		print("targetNode found")
-		return targetNode
-	else:
-		print("not found")
-func findNodeRecursively(node: Node, targetName: String):
-	if node.name == targetName:
-		return node
-	for child in node.get_children():
-		var result = findNodeRecursively(child, targetName)
-		if result:
-			return result
-	return null
-"""
 	
 func prepKillButton():
 	var charNodes = findCharacterNodes() as Array
@@ -62,8 +43,6 @@ func findCharacterNodes():
 	#print("Characters in current scene: ", sceneChildrenNodes)
 	
 	return sceneChildrenNodes
-
-
 	
 func _on_pressed():
 	var killName = prepKillButton()
