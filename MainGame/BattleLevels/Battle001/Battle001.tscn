@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1ig8vy0y0dd3"]
+[gd_scene load_steps=15 format=3 uid="uid://b1ig8vy0y0dd3"]
 
 [ext_resource type="Texture2D" uid="uid://cdb5q5y62gkkq" path="res://Sprites/WorldMap/Level 1/Battle001/MergeDownBattle001Field.png" id="1_om35p"]
 [ext_resource type="PackedScene" uid="uid://u51jqj31xqif" path="res://Sprites/Goblin/GoblinEnemy.tscn" id="2_epj4r"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" path="res://MainGame/BattleLevels/Battle001/ActionMenuButton.gd" id="8_t60am"]
 [ext_resource type="Script" path="res://MainGame/BattleLevels/Battle001/SettingsMenuButton.gd" id="9_hgjcy"]
 [ext_resource type="Script" path="res://MainGame/BattleLevels/UniversalBattleUISystems/KillButton.gd" id="9_whor7"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/Battle001/Target Selection.gd" id="13_ddv71"]
+[ext_resource type="Script" path="res://MainGame/BattleLevels/Battle001/FindCharPositions.gd" id="14_flork"]
 
 [node name="Battle001" type="Node2D"]
 
@@ -21,10 +23,16 @@ offset_bottom = 192.0
 texture = ExtResource("1_om35p")
 
 [node name="Player" parent="." instance=ExtResource("2_fjapp")]
-position = Vector2(104, 104)
+position = Vector2(84, 110)
+
+[node name="Marker2D" type="Marker2D" parent="Player"]
+position = Vector2(84, 105)
 
 [node name="GoblinEnemy" parent="." instance=ExtResource("2_epj4r")]
-position = Vector2(172, 104)
+position = Vector2(175, 111)
+
+[node name="Marker2D" type="Marker2D" parent="GoblinEnemy"]
+position = Vector2(175, 105)
 
 [node name="BattleManager" type="Node" parent="."]
 script = ExtResource("4_nhtfy")
@@ -43,27 +51,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("8_amtuq")
-
-[node name="SettingsMenuButton" type="Button" parent="Interface"]
-layout_mode = 0
-offset_left = 98.0
-offset_top = 161.0
-offset_right = 168.0
-offset_bottom = 192.0
-text = "Settings"
-script = ExtResource("9_hgjcy")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Interface/SettingsMenuButton"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.043
-anchor_top = -5.065
-anchor_right = -0.043
-anchor_bottom = -5.065
-offset_left = 0.00999999
-offset_top = 0.0149994
-offset_right = 79.01
-offset_bottom = 29.015
 
 [node name="ActionMenuButton" type="Button" parent="Interface"]
 custom_minimum_size = Vector2(100, 25)
@@ -86,23 +73,58 @@ offset_top = 0.00700378
 offset_right = 82.0
 offset_bottom = 32.007
 
+[node name="SettingsMenuButton" type="Button" parent="Interface"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 161.0
+offset_right = 164.0
+offset_bottom = 192.0
+text = "Settings"
+script = ExtResource("9_hgjcy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/SettingsMenuButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.043
+anchor_top = -5.065
+anchor_right = -0.043
+anchor_bottom = -5.065
+offset_left = 0.00999999
+offset_top = 0.0149994
+offset_right = 79.01
+offset_bottom = 29.015
+
 [node name="ReturnToMapButton" type="Button" parent="Interface"]
+layout_mode = 0
 offset_left = 167.0
-offset_top = 160.0
+offset_top = 161.0
 offset_right = 256.0
-offset_bottom = 191.0
+offset_bottom = 192.0
 text = "WorldMap
 "
 script = ExtResource("7_u3avt")
 
 [node name="KillButton" type="Button" parent="Interface"]
 visible = false
+layout_mode = 0
 offset_left = 82.0
 offset_top = 1.0
 offset_right = 172.0
 offset_bottom = 32.0
 text = "Kill Button"
 script = ExtResource("9_whor7")
+
+[node name="Target Selection" type="Control" parent="Interface"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_ddv71")
+
+[node name="FindCharPositions" type="Control" parent="Interface/Target Selection"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_flork")
 
 [connection signal="pressed" from="Interface/ReturnToMapButton" to="Interface/ReturnToMapButton" method="_on_pressed"]
 [connection signal="killButton" from="Interface/KillButton" to="BattleManager" method="_on_kill_button"]

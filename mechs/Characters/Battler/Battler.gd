@@ -20,9 +20,12 @@ func isCharacter():
 #min health
 @onready var health_min : int = 0
 
+@onready var marker_2d = $Marker2D
+
 
 func _ready():
 	var foo = null
+	position = marker_2d.position
 
 	
 #basic attack function for combatant
