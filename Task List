@@ -1,0 +1,17 @@
+Task List (semi-sorted):
+
+Core Mechanics:
+1. Turn cycle
+2. Attack functionality
+3. Skill functionality
+
+
+UI
+1. target selection arrow
+2. Health bar updates based on attacks
+3. Map Navigation
+  - pop up that says "are you sure you want to leave this battle and return to the map? your progress will not be saved"
+4. Action buttons
+  - change to horizontal container?
+5. Settings buttons
+  - if actions button menu is open then close when settings are pressed
